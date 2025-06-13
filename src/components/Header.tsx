@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion} from 'framer-motion';
 import Navbar from './navbar/Navbar';
 
 const Header: React.FC<{ className?: string }> = ({ className = '' }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Scroll handling
-  const { scrollY } = useScroll();
-  const backgroundOpacity = useTransform(scrollY, [0, 50], [0, 0.8]);
+  // const { scrollY } = useScroll();
+  // const backgroundOpacity = useTransform(scrollY, [0, 50], [0, 0.8]);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);

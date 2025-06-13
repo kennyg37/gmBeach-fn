@@ -7,7 +7,7 @@ interface NavbarProps {
   isScrolled: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
+const Navbar: React.FC<NavbarProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
