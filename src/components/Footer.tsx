@@ -3,11 +3,9 @@ import { motion } from 'framer-motion';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
-  // Form state
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
 
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
@@ -21,7 +19,6 @@ const Footer: React.FC = () => {
     },
   };
 
-  // Handle form input changes
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -29,15 +26,12 @@ const Footer: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       setFormStatus('Please fill in all fields.');
       return;
     }
-    // Simulate form submission (replace with actual API call)
     setFormStatus('Message sent successfully!');
     setFormData({ name: '', email: '', message: '' });
     setTimeout(() => setFormStatus(''), 3000);

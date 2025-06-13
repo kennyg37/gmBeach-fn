@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
+
 interface NavbarProps {
   isScrolled: boolean;
 }
