@@ -1,12 +1,34 @@
+import React, { useState, useEffect } from 'react';
+import { motion} from 'framer-motion';
 import Navbar from './navbar/Navbar';
 
-const Header = ({ className = '' }) => {
+const Header: React.FC<{ className?: string }> = ({ className = '' }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll handling
+  // const { scrollY } = useScroll();
+  // const backgroundOpacity = useTransform(scrollY, [0, 50], [0, 0.8]);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-brown-800/40  ${className}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center text-white">
-        <Navbar />
-      </div>
-    </header>
+    <motion.header
+      className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 transition-all duration-300 ${className} ${
+        isScrolled ? 'bg-teal-900/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+      }`}
+      style={{ backgroundColor: isScrolled ? undefined : 'transparent' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navbar isScrolled={isScrolled} />
+    </motion.header>
   );
 };
 
