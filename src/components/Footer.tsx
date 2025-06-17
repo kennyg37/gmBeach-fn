@@ -37,7 +37,6 @@ const Footer: React.FC = () => {
     setTimeout(() => setFormStatus(''), 3000);
   };
 
-  // Social media links
   const socialLinks = [
     {
       name: 'Facebook',
@@ -61,7 +60,6 @@ const Footer: React.FC = () => {
     },
   ];
 
-  // Quick links
   const quickLinks = [
     { name: 'About Us', url: '/about' },
     { name: 'Accommodations', url: '/accommodations' },
@@ -72,7 +70,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-t from-teal-900 to-teal-700 text-white py-16 overflow-hidden">
+    <footer className="relative bg-gray-900 text-white py-16">
       <div className="container mx-auto px-6 lg:px-12">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
@@ -83,21 +81,23 @@ const Footer: React.FC = () => {
         >
           {/* Contact Details */}
           <motion.div className="space-y-6" variants={fadeInUp}>
-            <h3 className="text-2xl font-bold text-teal-200">Contact Us</h3>
-            <div className="space-y-2">
-              <p className="text-teal-100">
-                <span className="font-semibold">Address:</span> Good Mood Beach
-                Resort, Lake Muhazi, Rwanda
+            <div className="flex flex-col">
+              <h3 className="text-xl font-light tracking-wider text-white uppercase mb-2">
+                Good Mood
+              </h3>
+              <span className="text-xs tracking-widest text-gray-400 uppercase">Beach Resort</span>
+            </div>
+            <div className="space-y-3">
+              <p className="text-gray-300 text-sm leading-relaxed">
+                <span className="font-medium">Address:</span> Good Mood Beach Resort, Lake Muhazi, Rwanda
               </p>
-              <p className="text-teal-100">
-                <span className="font-semibold">Phone:</span> +250 788 123 456
+              <p className="text-gray-300 text-sm">
+                <span className="font-medium">Phone:</span> +250 788 123 456
               </p>
-              <p className="text-teal-100">
-                <span className="font-semibold">Email:</span>{' '}
-                info@goodmoodresort.com
+              <p className="text-gray-300 text-sm">
+                <span className="font-medium">Email:</span> info@goodmoodresort.com
               </p>
             </div>
-            {/* Social Media Links */}
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <motion.a
@@ -106,11 +106,11 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Follow us on ${link.name}`}
-                  className="text-teal-200 hover:text-teal-400 transition-colors"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  className="text-gray-400 hover:text-white transition-colors"
+                  whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <span className="text-2xl">{link.icon}</span>
+                  <span className="text-xl">{link.icon}</span>
                 </motion.a>
               ))}
             </div>
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
 
           {/* Mini Contact Form */}
           <motion.div className="space-y-6" variants={fadeInUp}>
-            <h3 className="text-2xl font-bold text-teal-200">Get in Touch</h3>
+            <h3 className="text-lg font-light tracking-wider text-white uppercase">Get in Touch</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Your Name"
-                  className="w-full p-3 rounded-lg bg-teal-800 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  className="w-full p-3 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
                   aria-label="Name"
                 />
               </div>
@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Your Email"
-                  className="w-full p-3 rounded-lg bg-teal-800 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  className="w-full p-3 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
                   aria-label="Email"
                 />
               </div>
@@ -149,24 +149,22 @@ const Footer: React.FC = () => {
                   onChange={handleInputChange}
                   placeholder="Your Message"
                   rows={4}
-                  className="w-full p-3 rounded-lg bg-teal-800 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                  className="w-full p-3 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
                   aria-label="Message"
                 />
               </div>
               <motion.button
                 type="submit"
-                className="w-full p-3 bg-teal-600 text-white rounded-lg hover:bg-teal-500 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="w-full p-3 border border-gray-600 text-white hover:bg-white hover:text-gray-900 transition-all duration-300 tracking-wider text-sm"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Send Message
               </motion.button>
               {formStatus && (
                 <motion.p
                   className={`text-sm ${
-                    formStatus.includes('success')
-                      ? 'text-teal-200'
-                      : 'text-red-300'
+                    formStatus.includes('success') ? 'text-green-400' : 'text-red-400'
                   }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -180,13 +178,13 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <motion.div className="space-y-6" variants={fadeInUp}>
-            <h3 className="text-2xl font-bold text-teal-200">Explore</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-light tracking-wider text-white uppercase">Explore</h3>
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.url}
-                    className="text-teal-100 hover:text-teal-400 transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors text-sm tracking-wide"
                   >
                     {link.name}
                   </a>
@@ -198,36 +196,17 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <motion.div
-          className="mt-12 pt-8 border-t border-teal-600 text-center text-teal-200"
+          className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400"
           variants={fadeInUp}
         >
-          <p>
-            &copy; {new Date().getFullYear()} Good Mood Beach Resort. All rights
-            reserved.
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Good Mood Beach Resort. All rights reserved.
           </p>
-          <p className="mt-2 text-sm">
-            Designed with{' '}
-            <span className="text-red-400 animate-pulse">♥</span> by the Good Mood
-            Team
+          <p className="mt-2 text-xs">
+            Designed with care by the Good Mood Team
           </p>
         </motion.div>
       </div>
-
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-teal-800 opacity-10">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 1440 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 C300,50 600,0 900,50 C1200,100 1440,50 1440,50 L1440,100 L0,100 Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-      <div className="absolute bottom-10 left-10 w-4 h-4 bg-teal-300 rounded-full animate-bounce-slow"></div>
-      <div className="absolute top-20 right-10 w-6 h-6 bg-teal-200 rounded-full animate-bounce-slow delay-200"></div>
     </footer>
   );
 };
