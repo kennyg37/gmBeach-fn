@@ -246,7 +246,15 @@ const Footer: React.FC = () => {
               <a href="/sitemap" className="hover:text-amber-300 transition-colors">Sitemap</a>
             </div>
           </div>
+<<<<<<< HEAD
           
+=======
+          <div className="text-center mt-4">
+            <p className="text-xs text-gray-500">
+              Designed with passion by the Good Mood Team | Rwanda's Premier Lakeside Destination
+            </p>
+          </div>
+>>>>>>> d970e3fce513be5baf3bfc6117afc4232644611f
         </motion.div>
       </div>
     </footer>
