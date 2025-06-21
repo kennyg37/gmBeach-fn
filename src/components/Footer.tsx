@@ -1,6 +1,7 @@
 import React, { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -62,149 +63,194 @@ const Footer: React.FC = () => {
 
   const quickLinks = [
     { name: 'About Us', url: '/about' },
-    { name: 'Accommodations', url: '/accommodations' },
+    { name: 'Accommodations', url: '/accommodation' },
     { name: 'Dining', url: '/dining' },
     { name: 'Activities', url: '/activities' },
-    { name: 'Booking', url: '/booking' },
+    { name: 'Wellness', url: '/wellness' },
+    { name: 'Gallery', url: '/gallery' },
     { name: 'Contact', url: '/contact' },
+    { name: 'Booking', url: '/booking' },
   ];
 
   return (
-    <footer className="relative bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-6 lg:px-12">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      {/* Decorative top border */}
+      <div className="h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400"></div>
+      
+      <div className="container mx-auto px-6 lg:px-12 py-20">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Contact Details */}
-          <motion.div className="space-y-6" variants={fadeInUp}>
+          {/* Brand & Contact Info */}
+          <motion.div className="lg:col-span-1 space-y-6" variants={fadeInUp}>
             <div className="flex flex-col">
-              <h3 className="text-xl font-light tracking-wider text-white uppercase mb-2">
+              <h3 className="text-2xl font-light tracking-wider text-white uppercase mb-2">
                 Good Mood
               </h3>
-              <span className="text-xs tracking-widest text-gray-400 uppercase">Beach Resort</span>
-            </div>
-            <div className="space-y-3">
+              <span className="text-sm tracking-widest text-amber-300 uppercase mb-4">Beach Resort</span>
               <p className="text-gray-300 text-sm leading-relaxed">
-                <span className="font-medium">Address:</span> Good Mood Beach Resort, Lake Muhazi, Rwanda
-              </p>
-              <p className="text-gray-300 text-sm">
-                <span className="font-medium">Phone:</span> +250 788 123 456
-              </p>
-              <p className="text-gray-300 text-sm">
-                <span className="font-medium">Email:</span> info@goodmoodresort.com
+                Experience luxury and tranquility at Rwanda's premier lakeside destination.
               </p>
             </div>
-            <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <motion.a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Follow us on ${link.name}`}
-                  className="text-gray-400 hover:text-white transition-colors"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <span className="text-xl">{link.icon}</span>
-                </motion.a>
-              ))}
+            
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">Address</p>
+                  <p className="text-gray-300 text-sm">Good Mood Beach Resort<br />Lake Muhazi, Rwanda</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">Phone</p>
+                  <p className="text-gray-300 text-sm">+250 788 123 456</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">Email</p>
+                  <p className="text-gray-300 text-sm">info@goodmoodresort.com</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-white font-medium text-sm">Reception Hours</p>
+                  <p className="text-gray-300 text-sm">24/7 Available</p>
+                </div>
+              </div>
             </div>
-          </motion.div>
-
-          {/* Mini Contact Form */}
-          <motion.div className="space-y-6" variants={fadeInUp}>
-            <h3 className="text-lg font-light tracking-wider text-white uppercase">Get in Touch</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your Name"
-                  className="w-full p-3 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
-                  aria-label="Name"
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Your Email"
-                  className="w-full p-3 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
-                  aria-label="Email"
-                />
-              </div>
-              <div>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Your Message"
-                  rows={4}
-                  className="w-full p-3 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors"
-                  aria-label="Message"
-                />
-              </div>
-              <motion.button
-                type="submit"
-                className="w-full p-3 border border-gray-600 text-white hover:bg-white hover:text-gray-900 transition-all duration-300 tracking-wider text-sm"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Send Message
-              </motion.button>
-              {formStatus && (
-                <motion.p
-                  className={`text-sm ${
-                    formStatus.includes('success') ? 'text-green-400' : 'text-red-400'
-                  }`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {formStatus}
-                </motion.p>
-              )}
-            </form>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div className="space-y-6" variants={fadeInUp}>
-            <h3 className="text-lg font-light tracking-wider text-white uppercase">Explore</h3>
+            <h3 className="text-lg font-medium tracking-wider text-white uppercase border-b border-amber-400 pb-2">
+              Explore
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.url}
-                    className="text-gray-300 hover:text-white transition-colors text-sm tracking-wide"
+                    className="text-gray-300 hover:text-amber-300 transition-colors text-sm tracking-wide flex items-center gap-2 group"
                   >
+                    <span className="w-1 h-1 bg-amber-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
           </motion.div>
+
+          {/* Services */}
+          <motion.div className="space-y-6" variants={fadeInUp}>
+            <h3 className="text-lg font-medium tracking-wider text-white uppercase border-b border-amber-400 pb-2">
+              Services
+            </h3>
+            <ul className="space-y-3">
+              {[
+                'Luxury Accommodations',
+                'Fine Dining',
+                'Spa & Wellness',
+                'Water Sports',
+                'Cultural Tours',
+                'Event Hosting',
+                'Airport Transfer',
+                'Concierge Service'
+              ].map((service) => (
+                <li key={service}>
+                  <span className="text-gray-300 text-sm tracking-wide flex items-center gap-2">
+                    <span className="w-1 h-1 bg-amber-400 rounded-full"></span>
+                    {service}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Newsletter & Social */}
+          <motion.div className="space-y-6" variants={fadeInUp}>
+            <h3 className="text-lg font-medium tracking-wider text-white uppercase border-b border-amber-400 pb-2">
+              Stay Connected
+            </h3>
+            
+            <div className="space-y-4">
+              <p className="text-gray-300 text-sm">
+                Subscribe to our newsletter for exclusive offers and updates.
+              </p>
+              
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Your email address"
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 transition-colors"
+                />
+                <motion.button
+                  type="submit"
+                  className="w-full p-3 bg-gradient-to-r from-amber-400 to-amber-500 text-gray-900 rounded-lg font-medium hover:from-amber-500 hover:to-amber-600 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Subscribe
+                </motion.button>
+              </form>
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-white font-medium text-sm">Follow Us</p>
+              <div className="flex space-x-4">
+                {socialLinks.map((link) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow us on ${link.name}`}
+                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-amber-500 transition-all duration-300"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <span className="text-lg">{link.icon}</span>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Bottom Bar */}
         <motion.div
-          className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400"
+          className="mt-16 pt-8 border-t border-gray-700"
           variants={fadeInUp}
         >
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Good Mood Beach Resort. All rights reserved.
-          </p>
-          <p className="mt-2 text-xs">
-            Designed with care by the Good Mood Team
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-400">
+              &copy; {new Date().getFullYear()} Good Mood Beach Resort. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm text-gray-400">
+              <a href="/privacy" className="hover:text-amber-300 transition-colors">Privacy Policy</a>
+              <a href="/terms" className="hover:text-amber-300 transition-colors">Terms of Service</a>
+              <a href="/sitemap" className="hover:text-amber-300 transition-colors">Sitemap</a>
+            </div>
+          </div>
+          <div className="text-center mt-4">
+            <p className="text-xs text-gray-500">
+              Designed with passion by the Good Mood Team | Rwanda's Premier Lakeside Destination
+            </p>
+          </div>
         </motion.div>
       </div>
     </footer>
