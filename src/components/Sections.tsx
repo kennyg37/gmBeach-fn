@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight, Leaf, Users, Award } from 'lucide-react';
 
 const Sections: React.FC = () => {
   const fadeInUp = {
@@ -15,8 +16,73 @@ const Sections: React.FC = () => {
     },
   };
 
+  const features = [
+    {
+      icon: <Leaf className="w-8 h-8" />,
+      title: "Sustainable Luxury",
+      description: "95% of our ingredients come from our own organic gardens and farms"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Cultural Immersion",
+      description: "Authentic Rwandan experiences with local communities"
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "World-Class Service",
+      description: "Personalized attention and exceptional hospitality"
+    }
+  ];
+
   return (
     <div className="font-sans">
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            className="text-center mb-16"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+              Why Choose Good Mood
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+              Experience Excellence
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="text-center p-8 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+              >
+                <div className="text-amber-500 mb-6 flex justify-center">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-medium text-gray-800 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Section 1: Connection & Well-Being */}
       <section className="relative bg-gray-900 text-white py-20 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
@@ -31,7 +97,7 @@ const Sections: React.FC = () => {
             <div className="relative w-full lg:w-1/2">
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
-                  className="relative h-80 overflow-hidden"
+                  className="relative h-80 overflow-hidden rounded-lg"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -42,7 +108,7 @@ const Sections: React.FC = () => {
                   />
                 </motion.div>
                 <motion.div
-                  className="relative h-80 overflow-hidden mt-8"
+                  className="relative h-80 overflow-hidden mt-8 rounded-lg"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -69,11 +135,12 @@ const Sections: React.FC = () => {
                 lakeside serenity and discover the unique beauty of our beloved Lake Muhazi.
               </p>
               <motion.button
-                className="border border-white/30 px-8 py-3 text-white hover:bg-white hover:text-gray-900 transition-all duration-300 tracking-wider text-sm"
+                className="inline-flex items-center gap-2 border border-white/30 px-8 py-3 text-white hover:bg-white hover:text-gray-900 transition-all duration-300 tracking-wider text-sm rounded-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 More about our Lake Activities
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
             </motion.div>
           </motion.div>
@@ -112,7 +179,7 @@ const Sections: React.FC = () => {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative h-96 overflow-hidden">
+              <div className="relative h-96 overflow-hidden rounded-lg">
                 <img
                   src="/5.jpg"
                   alt="Luxury Suites"
@@ -121,6 +188,7 @@ const Sections: React.FC = () => {
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                 <div className="absolute bottom-6 left-6">
                   <h3 className="text-2xl font-light text-white">Suites</h3>
+                  <p className="text-amber-300 text-sm mt-2">From $250/night</p>
                 </div>
               </div>
             </motion.div>
@@ -132,7 +200,7 @@ const Sections: React.FC = () => {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative h-96 overflow-hidden">
+              <div className="relative h-96 overflow-hidden rounded-lg">
                 <img
                   src="/6.jpg"
                   alt="Private Lakehouse"
@@ -141,6 +209,7 @@ const Sections: React.FC = () => {
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                 <div className="absolute bottom-6 left-6">
                   <h3 className="text-2xl font-light text-white">Private Lakehouse</h3>
+                  <p className="text-amber-300 text-sm mt-2">From $450/night</p>
                 </div>
               </div>
             </motion.div>
@@ -152,7 +221,7 @@ const Sections: React.FC = () => {
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative h-96 overflow-hidden">
+              <div className="relative h-96 overflow-hidden rounded-lg">
                 <img
                   src="/7.jpg"
                   alt="Cottage"
@@ -161,6 +230,7 @@ const Sections: React.FC = () => {
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                 <div className="absolute bottom-6 left-6">
                   <h3 className="text-2xl font-light text-white">Cottage</h3>
+                  <p className="text-amber-300 text-sm mt-2">From $180/night</p>
                 </div>
               </div>
             </motion.div>
@@ -181,7 +251,7 @@ const Sections: React.FC = () => {
             {/* Image */}
             <div className="relative w-full lg:w-1/2">
               <motion.div
-                className="relative h-96 overflow-hidden"
+                className="relative h-96 overflow-hidden rounded-lg"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -205,11 +275,12 @@ const Sections: React.FC = () => {
                 At Good Mood Beach Resort, the table is at the lake, which means that 95% of what our Chef uses in his cuisine is grown, nurtured, and produced on the resort. There are vegetable and herb gardens galore, and chickens, cows, horses, pigs, and turkeys wander wonderfully organically free. Even the honey served in your tea is harvested by our bees.
               </p>
               <motion.button
-                className="border border-white/30 px-8 py-3 text-white hover:bg-white hover:text-gray-700 transition-all duration-300 tracking-wider text-sm"
+                className="inline-flex items-center gap-2 border border-white/30 px-8 py-3 text-white hover:bg-white hover:text-gray-700 transition-all duration-300 tracking-wider text-sm rounded-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore Our Cuisine
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
             </motion.div>
           </motion.div>
@@ -250,7 +321,7 @@ const Sections: React.FC = () => {
               className="relative group cursor-pointer"
               variants={fadeInUp}
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-80 overflow-hidden rounded-lg">
                 <img
                   src="/9.jpg"
                   alt="Wildlife Experience"
@@ -258,9 +329,13 @@ const Sections: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                 <div className="absolute top-6 left-6">
-                  <span className="bg-white text-gray-900 px-3 py-1 text-xs tracking-wider font-medium">
+                  <span className="bg-amber-500 text-white px-3 py-1 text-xs tracking-wider font-medium rounded-full">
                     RECOMMENDED
                   </span>
+                </div>
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-xl font-medium text-white">Gorilla Trekking</h3>
+                  <p className="text-amber-300 text-sm mt-1">From $1,500</p>
                 </div>
               </div>
             </motion.div>
@@ -270,13 +345,17 @@ const Sections: React.FC = () => {
               className="relative group cursor-pointer"
               variants={fadeInUp}
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-80 overflow-hidden rounded-lg">
                 <img
                   src="/10.jpg"
                   alt="Cultural Experience"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-xl font-medium text-white">Cultural Tours</h3>
+                  <p className="text-amber-300 text-sm mt-1">From $85</p>
+                </div>
               </div>
             </motion.div>
 
@@ -285,15 +364,36 @@ const Sections: React.FC = () => {
               className="relative group cursor-pointer"
               variants={fadeInUp}
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-80 overflow-hidden rounded-lg">
                 <img
                   src="/3.jpg"
                   alt="Lake Activities"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-xl font-medium text-white">Lake Activities</h3>
+                  <p className="text-amber-300 text-sm mt-1">From $35</p>
+                </div>
               </div>
             </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="text-center mt-12"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.button
+              className="inline-flex items-center gap-2 bg-amber-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View All Activities
+              <ArrowRight className="w-4 h-4" />
+            </motion.button>
           </motion.div>
         </div>
       </section>

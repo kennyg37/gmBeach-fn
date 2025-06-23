@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, MapPin, Clock } from 'lucide-react';
+import { Calendar, Users, MapPin, Clock, Phone } from 'lucide-react';
 
 const BookingWidget: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -154,11 +154,12 @@ const BookingWidget: React.FC = () => {
           </motion.button>
           <motion.button
             type="button"
-            className="px-8 py-4 border border-white/30 text-white rounded-lg font-medium tracking-wide hover:bg-white/10 transition-all duration-300"
+            className="flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white rounded-lg font-medium tracking-wide hover:bg-white/10 transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Call Us: +250 788 123 456
+            <Phone className="w-4 h-4" />
+            Call: +250 788 123 456
           </motion.button>
         </motion.div>
       </form>

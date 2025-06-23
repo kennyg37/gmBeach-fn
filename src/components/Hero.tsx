@@ -2,8 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from './Header';
 import BookingWidget from './BookingWidget';
+import { ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
@@ -45,10 +53,41 @@ const Hero: React.FC = () => {
             >
               GOOD MOOD BEACH RESORT
             </motion.h1>
+
+            <motion.p
+              className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+            >
+              Experience the perfect harmony of luxury and nature on the pristine shores of Lake Muhazi, Rwanda
+            </motion.p>
           </div>
 
           {/* Enhanced Booking Widget */}
           <BookingWidget />
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2 }}
+        >
+          <motion.button
+            onClick={scrollToNext}
+            className="flex flex-col items-center text-white/70 hover:text-white transition-colors group"
+            whileHover={{ y: -2 }}
+          >
+            <span className="text-sm tracking-wider mb-2">Discover More</span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <ChevronDown className="w-6 h-6" />
+            </motion.div>
+          </motion.button>
         </motion.div>
       </div>
     </div>
