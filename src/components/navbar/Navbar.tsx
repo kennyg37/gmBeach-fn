@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Search, ShoppingBag } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -8,21 +9,28 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const menuItems = [
-    { name: 'HOME', href: '/' },
-    { name: 'ACCOMMODATION', href: '/accommodation' },
-    { name: 'FARM ACTIVITIES', href: '/activities' },
-    { name: 'FARM TO FORK', href: '/dining' },
-    { name: 'WELLNESS', href: '/wellness' },
-    { name: 'OUR STORY', href: '/about' },
-    { name: 'GALLERY', href: '/gallery' },
-    { name: 'CONTACT', href: '/contact' },
-    { name: 'BOOKING', href: '/booking' },
+    { name: 'Home', href: '/' },
+    { name: 'Accommodation', href: '/accommodation' },
+    { name: 'Dining', href: '/dining' },
+    { name: 'Experiences', href: '/activities' },
+    { name: 'Our Story', href: '/about' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Events', href: '/events' },
   ];
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Helper to check if a menu item is active
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(href);
   };
 
   return (
@@ -48,12 +56,12 @@ const Navbar: React.FC<NavbarProps> = () => {
       {/* Desktop Menu */}
       <div className="hidden lg:flex flex-1 items-center justify-center">
         <div className="flex justify-center items-center gap-8">
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <motion.a
               key={item.name}
               href={item.href}
-              className={`relative text-xs font-medium tracking-wider text-gray-700 hover:text-gray-900 transition-colors ${
-                index === 0 ? 'border-b-2 border-gray-800 pb-1' : ''
+              className={`relative font-medium tracking-wider text-gray-700 hover:text-gray-900 transition-colors ${
+                isActive(item.href) ? 'border-b-2 border-gray-800 pb-1' : ''
               }`}
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
@@ -109,7 +117,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           <motion.a
             key={item.name}
             href={item.href}
-            className="text-sm font-medium tracking-wider text-gray-700 hover:text-gray-900"
+            className={`text-sm font-medium tracking-wider text-gray-700 hover:text-gray-900 ${
+              isActive(item.href) ? 'border-b-2 border-gray-800 pb-1' : ''
+            }`}
             onClick={toggleMobileMenu}
             variants={{
               hidden: { opacity: 0, y: 20 },

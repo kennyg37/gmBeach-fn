@@ -19,117 +19,241 @@ const Activities: React.FC = () => {
   };
 
   const activities = [
+    // Nature & Leisure
     {
       id: 1,
-      name: "Gorilla Trekking",
-      image: "/9.jpg",
-      duration: "Full Day",
-      groupSize: "8 people max",
-      difficulty: "Moderate",
-      price: "$1,500",
-      rating: 5,
-      description: "Experience the magic of meeting mountain gorillas in their natural habitat. This once-in-a-lifetime adventure takes you through Rwanda's pristine forests.",
+      name: "Bird Viewing",
+      image: "/2.jpg",
+      duration: "1 Hour",
+      groupSize: "10 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.8,
+      description: "Observe a wide variety of exotic and native birds in their natural lakeside habitat.",
       highlights: [
-        "Professional guide and tracker",
-        "Transportation to Volcanoes National Park",
-        "Gorilla permit included",
-        "Lunch and refreshments"
+        "Guided birdwatching walks",
+        "Binoculars available"
       ],
-      category: "Wildlife"
+      category: "Nature & Leisure"
     },
     {
       id: 2,
-      name: "Cultural Village Tour",
+      name: "Zoo Botanic Walk",
       image: "/10.jpg",
-      duration: "Half Day",
-      groupSize: "12 people max",
+      duration: "1 Hour",
+      groupSize: "15 people max",
       difficulty: "Easy",
-      price: "$85",
-      rating: 4.8,
-      description: "Immerse yourself in authentic Rwandan culture through traditional dance, crafts, and storytelling with local communities.",
+      price: "Included",
+      rating: 4.7,
+      description: "Stroll through our lush botanical space featuring local plant life and small animals (Monkeys) for a peaceful nature experience.",
       highlights: [
-        "Traditional dance performance",
-        "Craft-making workshops",
-        "Local cuisine tasting",
-        "Cultural storytelling session"
+        "Botanical garden tour",
+        "See monkeys and local flora"
       ],
-      category: "Cultural"
+      category: "Nature & Leisure"
     },
     {
       id: 3,
-      name: "Lake Muhazi Boat Safari",
-      image: "/3.jpg",
-      duration: "3 Hours",
-      groupSize: "15 people max",
+      name: "Fresh Fruit & Vegetable Garden Tour",
+      image: "/8.jpg",
+      duration: "45 Minutes",
+      groupSize: "10 people max",
       difficulty: "Easy",
-      price: "$45",
-      rating: 4.9,
-      description: "Explore the pristine waters of Lake Muhazi while spotting diverse bird species and enjoying breathtaking sunset views.",
+      price: "Included",
+      rating: 4.6,
+      description: "Visit our garden to see how we grow fresh, organic produce that ends up on your plate.",
       highlights: [
-        "Bird watching opportunities",
-        "Sunset photography",
-        "Professional boat captain",
-        "Refreshments on board"
+        "Organic gardening",
+        "Farm-to-table experience"
       ],
-      category: "Water Sports"
+      category: "Nature & Leisure"
     },
+    // Water Activities
     {
       id: 4,
-      name: "Kayaking Adventure",
-      image: "/1.jpg",
-      duration: "2 Hours",
-      groupSize: "8 people max",
+      name: "Umbrella Boat Ride",
+      image: "/3.jpg",
+      duration: "30 Minutes",
+      groupSize: "6 people max",
       difficulty: "Easy",
-      price: "$35",
-      rating: 4.7,
-      description: "Paddle through calm waters and hidden coves of Lake Muhazi, perfect for beginners and experienced kayakers alike.",
+      price: "$20",
+      rating: 4.9,
+      description: "Enjoy a slow, romantic cruise on Lake Muhazi under a shaded umbrella boat.",
       highlights: [
-        "Professional instruction",
-        "Safety equipment provided",
-        "Scenic route planning",
-        "Photography assistance"
+        "Romantic lake cruise",
+        "Shaded umbrella boat"
       ],
-      category: "Water Sports"
+      category: "Water Activities"
     },
     {
       id: 5,
-      name: "Hiking & Nature Walks",
-      image: "/2.jpg",
-      duration: "4 Hours",
-      groupSize: "10 people max",
+      name: "Speed Boat Adventures",
+      image: "/1.jpg",
+      duration: "20 Minutes",
+      groupSize: "4 people max",
       difficulty: "Moderate",
-      price: "$55",
-      rating: 4.6,
-      description: "Discover Rwanda's diverse flora and fauna on guided nature walks through scenic trails around the resort.",
+      price: "$35",
+      rating: 4.8,
+      description: "For the thrill-seekers—feel the breeze with a fast-paced ride across the lake.",
       highlights: [
-        "Expert naturalist guide",
-        "Wildlife spotting",
-        "Medicinal plant education",
-        "Scenic viewpoints"
+        "Fast-paced lake ride",
+        "Thrill-seeking adventure"
       ],
-      category: "Nature"
+      category: "Water Activities"
     },
     {
       id: 6,
-      name: "Farm-to-Table Experience",
-      image: "/8.jpg",
-      duration: "5 Hours",
+      name: "Fishing on the Lake",
+      image: "/5.jpg",
+      duration: "1 Hour",
       groupSize: "6 people max",
       difficulty: "Easy",
-      price: "$95",
-      rating: 4.9,
-      description: "Join our chef for a hands-on culinary journey from garden to plate, learning traditional cooking techniques.",
+      price: "$15",
+      rating: 4.5,
+      description: "Grab a rod and try catching your own fresh fish right from the lake.",
       highlights: [
-        "Garden harvesting",
-        "Cooking class with chef",
-        "Traditional recipes",
-        "Full meal included"
+        "Fishing equipment provided",
+        "Catch-and-release option"
       ],
-      category: "Culinary"
+      category: "Water Activities"
+    },
+    {
+      id: 7,
+      name: "Swimming Pool",
+      image: "/4.jpg",
+      duration: "All Day",
+      groupSize: "Open",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.7,
+      description: "Take a refreshing dip in our clean and scenic pool overlooking the lake.",
+      highlights: [
+        "Scenic pool",
+        "Lake views"
+      ],
+      category: "Water Activities"
+    },
+    // Games & Sports
+    {
+      id: 8,
+      name: "Mini Golf",
+      image: "/7.jpg",
+      duration: "Flexible",
+      groupSize: "6 people max",
+      difficulty: "Easy",
+      price: "$10",
+      rating: 4.6,
+      description: "Have some relaxed fun with family or friends on our mini golf course.",
+      highlights: [
+        "Family-friendly",
+        "Fun for all ages"
+      ],
+      category: "Games & Sports"
+    },
+    {
+      id: 9,
+      name: "Basketball",
+      image: "/6.jpg",
+      duration: "Flexible",
+      groupSize: "10 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.5,
+      description: "Enjoy a quick game or shoot some hoops with fellow guests.",
+      highlights: [
+        "Basketball court",
+        "Casual or competitive play"
+      ],
+      category: "Games & Sports"
+    },
+    {
+      id: 10,
+      name: "Table Tennis",
+      image: "/9.jpg",
+      duration: "Flexible",
+      groupSize: "4 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.4,
+      description: "Test your reflexes and have fun with indoor table tennis matches.",
+      highlights: [
+        "Indoor table tennis",
+        "Fun matches"
+      ],
+      category: "Games & Sports"
+    },
+    {
+      id: 11,
+      name: "Mini Football",
+      image: "/10.jpg",
+      duration: "Flexible",
+      groupSize: "8 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.3,
+      description: "Play small-sided football matches in a fun and safe environment.",
+      highlights: [
+        "Small-sided matches",
+        "Safe environment"
+      ],
+      category: "Games & Sports"
+    },
+    // Chill & Romance Spots
+    {
+      id: 12,
+      name: "Gazaux de Champagne",
+      image: "/8.jpg",
+      duration: "Flexible",
+      groupSize: "2 people",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.9,
+      description: "Lakeside sipping corner.",
+      highlights: [
+        "Romantic lakeside spot"
+      ],
+      category: "Chill & Romance Spots"
+    },
+    {
+      id: 13,
+      name: "Gazaux de Golf",
+      image: "/7.jpg",
+      duration: "Flexible",
+      groupSize: "2 people",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.8,
+      description: "A golf-inspired garden relaxation zone.",
+      highlights: [
+        "Garden relaxation"
+      ],
+      category: "Chill & Romance Spots"
+    },
+    {
+      id: 14,
+      name: "Bingaloo d'Amour",
+      image: "/6.jpg",
+      duration: "Flexible",
+      groupSize: "2 people",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.9,
+      description: "Swinging Bed for two, perfect for sunset moments.",
+      highlights: [
+        "Swinging bed",
+        "Perfect for sunset"
+      ],
+      category: "Chill & Romance Spots"
     }
   ];
 
-  const categories = ["All", "Wildlife", "Cultural", "Water Sports", "Nature", "Culinary"];
+  const categories = [
+    "All",
+    "Nature & Leisure",
+    "Water Activities",
+    "Games & Sports",
+    "Chill & Romance Spots"
+  ];
   const [activeCategory, setActiveCategory] = React.useState("All");
 
   const filteredActivities = activeCategory === "All" 
@@ -156,13 +280,13 @@ const Activities: React.FC = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
-            Adventures Await
+            Experiences
           </p>
           <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
-            FARM ACTIVITIES
+            More Than a Stay – It's a Lifestyle
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Discover Rwanda's natural wonders and rich culture through our curated experiences
+            Discover the best of nature, fun, and relaxation in one resort.
           </p>
         </motion.div>
       </section>

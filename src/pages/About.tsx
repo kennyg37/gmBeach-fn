@@ -22,22 +22,17 @@ const About: React.FC = () => {
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Hospitality",
-      description: "We believe in creating memorable experiences through genuine care and attention to detail."
+      description: "Every detail is designed to put you in a Good Mood, from the fresh breeze over Muhazi to our personalized service."
     },
     {
       icon: <Leaf className="w-8 h-8" />,
       title: "Sustainability",
-      description: "Our commitment to preserving Lake Muhazi's natural beauty for future generations."
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Community",
-      description: "Supporting local communities and celebrating Rwandan culture and traditions."
+      description: "We care deeply about local culture and sustainable living, ensuring our resort is a top getaway for years to come."
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Excellence",
-      description: "Delivering world-class service and maintaining the highest standards in everything we do."
+      title: "Unforgettable Experiences",
+      description: "We are passionate about creating unique, memorable moments for every guest."
     }
   ];
 
@@ -84,35 +79,17 @@ const About: React.FC = () => {
           >
             <motion.div className="space-y-8" variants={fadeInUp}>
               <div>
-                <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
-                  Since 2020
-                </p>
-                <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight mb-6">
-                  A Vision Born from Love for Rwanda
-                </h2>
-              </div>
-              
-              <div className="space-y-6 text-gray-600 leading-relaxed">
-                <p>
-                  Good Mood Beach Resort was born from a deep appreciation for Rwanda's natural beauty 
-                  and a vision to create an extraordinary lakeside sanctuary. Nestled on the pristine 
-                  shores of Lake Muhazi, our resort represents the perfect harmony between luxury and nature.
-                </p>
-                
-                <p>
-                  Our founders, inspired by the breathtaking landscapes and warm hospitality of Rwanda, 
-                  envisioned a place where guests could disconnect from the world and reconnect with 
-                  themselves, their loved ones, and the stunning environment that surrounds us.
-                </p>
-                
-                <p>
-                  Today, we stand as Rwanda's premier lakeside destination, offering world-class 
-                  accommodations, exceptional dining experiences, and unforgettable adventures, 
-                  all while maintaining our commitment to sustainability and community support.
-                </p>
+                <p className="text-2xl font-bold mb-4">The Spirit of GoodMood</p>
+                <div className="space-y-6 text-gray-600 leading-relaxed">
+                  <p>
+                    Born from a dream of peaceful lakeside living, GoodMood Resort was created as a space where comfort meets nature. We wanted to build more than a resort – a place where families, lovers, and friends can connect deeply, celebrate life, and reset their inner peace. From the fresh breeze over Muhazi to our personalized hospitality, every detail is designed to put you in a Good Mood.
+                  </p>
+                  <p>
+                    Started as a family vision, today GoodMood is a community favorite and a top getaway destination. We're passionate about local culture, sustainable living, and unforgettable guest experiences.
+                  </p>
+                </div>
               </div>
             </motion.div>
-
             <motion.div
               className="relative"
               variants={fadeInUp}
@@ -146,7 +123,7 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
-              Our Values
+              Our Principles
             </p>
             <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
               What Drives Us Forward
@@ -154,7 +131,7 @@ const About: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -175,79 +152,6 @@ const About: React.FC = () => {
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 lg:px-12">
-          <motion.div
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
-              Meet Our Team
-            </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
-              The People Behind the Magic
-            </h2>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-12"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                name: "Jean Baptiste Uwimana",
-                role: "General Manager",
-                image: "/5.jpg",
-                description: "With over 15 years in hospitality, Jean Baptiste ensures every guest experience exceeds expectations."
-              },
-              {
-                name: "Marie Claire Mukamana",
-                role: "Head Chef",
-                image: "/6.jpg",
-                description: "Marie Claire brings authentic Rwandan flavors to life with her innovative farm-to-table approach."
-              },
-              {
-                name: "David Nkurunziza",
-                role: "Activities Director",
-                image: "/7.jpg",
-                description: "David curates unforgettable adventures and cultural experiences around Lake Muhazi."
-              }
-            ].map((member, index) => (
-              <motion.div
-                key={index}
-                className="text-center group"
-                variants={fadeInUp}
-              >
-                <div className="relative mb-6 overflow-hidden rounded-lg">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                </div>
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-amber-500 font-light mb-4">
-                  {member.role}
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {member.description}
                 </p>
               </motion.div>
             ))}

@@ -21,54 +21,55 @@ const Dining: React.FC = () => {
   const restaurants = [
     {
       id: 1,
-      name: "Lakeside Terrace",
+      name: "Restaurant",
       image: "/8.jpg",
-      cuisine: "Farm-to-Table",
+      cuisine: "Full-service Dining",
       hours: "6:00 AM - 10:00 PM",
       capacity: "80 guests",
-      priceRange: "$$$",
-      description: "Our signature restaurant featuring organic ingredients sourced directly from our gardens and local farms, offering panoramic lake views.",
-      specialties: [
-        "Grilled Lake Fish with Herb Butter",
-        "Organic Garden Salad",
-        "Traditional Rwandan Beef Stew",
-        "Fresh Fruit Platters"
-      ],
-      features: ["Outdoor Seating", "Lake Views", "Organic Menu", "Wine Pairing"]
+      priceRange: "-",
+      description: "Full-service dining with lakefront ambiance.",
+      specialties: [],
+      features: ["Lakefront Ambiance"]
     },
     {
       id: 2,
-      name: "The Garden Café",
+      name: "Bar",
       image: "/6.jpg",
-      cuisine: "International",
-      hours: "7:00 AM - 6:00 PM",
+      cuisine: "Cocktails, Local Beers, Fine Wines",
+      hours: "4:00 PM - 12:00 AM",
       capacity: "40 guests",
-      priceRange: "$$",
-      description: "Casual dining surrounded by lush gardens, perfect for breakfast, light lunches, and afternoon tea with homemade pastries.",
-      specialties: [
-        "Artisan Coffee & Tea",
-        "Fresh Pastries & Breads",
-        "Healthy Smoothie Bowls",
-        "Gourmet Sandwiches"
-      ],
-      features: ["Garden Setting", "Coffee Bar", "Healthy Options", "Takeaway Available"]
+      priceRange: "-",
+      description: "Sip refreshing cocktails, local beers, and fine wines.",
+      specialties: [],
+      features: ["Refreshing Cocktails", "Local Beers", "Fine Wines"]
     },
     {
       id: 3,
-      name: "Sunset Bar & Grill",
+      name: "Modern Kitchen",
       image: "/3.jpg",
-      cuisine: "Grilled Specialties",
-      hours: "4:00 PM - 11:00 PM",
-      capacity: "60 guests",
-      priceRange: "$$$",
-      description: "Waterfront dining with spectacular sunset views, featuring grilled specialties and craft cocktails made with local ingredients.",
+      cuisine: "Open Concept Kitchen",
+      hours: "6:00 AM - 10:00 PM",
+      capacity: "-",
+      priceRange: "-",
+      description: "Clean, open concept kitchen for fresh, visible cooking.",
+      specialties: [],
+      features: ["Open Concept", "Fresh Cooking"]
+    },
+    {
+      id: 4,
+      name: "BBQ Experience",
+      image: "/4.jpg",
+      cuisine: "BBQ",
+      hours: "On Request",
+      capacity: "-",
+      priceRange: "-",
+      description: "BBQ Experience with local specialties.",
       specialties: [
-        "BBQ Platter for Two",
-        "Grilled Prawns",
-        "Signature Cocktails",
-        "Local Beer Selection"
+        "Fresh Fish from Lake Muhazi",
+        "Traditional Rwandan Chicken",
+        "Oven-Roasted Whole Goat (on request)"
       ],
-      features: ["Sunset Views", "Cocktail Bar", "Live Music", "Private Events"]
+      features: ["BBQ", "Local Specialties"]
     }
   ];
 
@@ -122,10 +123,10 @@ const Dining: React.FC = () => {
             Culinary Excellence
           </p>
           <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
-            FARM TO FORK
+          Fresh Flavors. Local Taste. Global Standards.
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Experience authentic flavors with ingredients grown in our own gardens
+          Enjoy a culinary journey with freshly prepared meals inspired by local ingredients and international flair.
           </p>
         </motion.div>
       </section>

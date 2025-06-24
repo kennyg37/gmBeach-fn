@@ -21,50 +21,66 @@ const Accommodation: React.FC = () => {
   const accommodations = [
     {
       id: 1,
-      name: "Luxury Suites",
+      name: "Family House",
       image: "/5.jpg",
       price: "$250",
-      capacity: "2-4 Guests",
-      size: "65 m²",
-      description: "Elegantly appointed suites with panoramic lake views, featuring modern amenities and private balconies.",
-      amenities: ["Lake View", "Private Balcony", "King Bed", "Mini Bar", "Free WiFi", "Room Service"],
+      capacity: "4-6 Guests",
+      size: "2 Bedrooms",
+      description: "Perfect for families or groups who need space and convenience.",
+      amenities: ["2 Bedrooms", "Living Room", "Fully Equipped Kitchen", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
-        "Spacious living area with lake-facing windows",
-        "Marble bathroom with rain shower",
-        "Premium bedding and linens",
-        "24/7 concierge service"
+        "Spacious living area",
+        "Fully equipped kitchen",
+        "Ideal for families or groups",
+        "Heavy breakfast included"
       ]
     },
     {
       id: 2,
-      name: "Private Lakehouse",
+      name: "Victoria Cottage",
       image: "/6.jpg",
-      price: "$450",
-      capacity: "4-6 Guests",
-      size: "120 m²",
-      description: "Exclusive lakefront accommodation with direct water access, perfect for families or groups seeking privacy.",
-      amenities: ["Private Beach", "Full Kitchen", "2 Bedrooms", "Living Room", "Boat Access", "BBQ Area"],
+      price: "$180",
+      capacity: "2 Guests",
+      size: "1 Bedroom [King Size Bed]",
+      description: "Elegant comfort with a lake view touch.",
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
-        "Direct lake access with private dock",
-        "Fully equipped kitchen and dining area",
-        "Separate bedrooms with en-suite bathrooms",
-        "Private outdoor terrace with lake views"
+        "Lake view",
+        "Elegant comfort",
+        "Heavy breakfast included",
+        "Ideal for couples or solo travelers"
       ]
     },
     {
       id: 3,
-      name: "Cozy Cottage",
+      name: "Nuit de Brise Cottage",
       image: "/7.jpg",
       price: "$180",
       capacity: "2 Guests",
-      size: "45 m²",
-      description: "Intimate cottage nestled among gardens, offering a peaceful retreat with authentic Rwandan charm.",
-      amenities: ["Garden View", "Fireplace", "Queen Bed", "Kitchenette", "Private Patio", "Nature Walks"],
+      size: "1 Bedroom [King Size Bed]",
+      description: "A romantic breeze-filled stay, ideal for couples.",
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
-        "Traditional Rwandan architecture with modern comfort",
-        "Surrounded by lush tropical gardens",
-        "Cozy fireplace for cool evenings",
-        "Private patio with garden seating"
+        "Romantic setting",
+        "Breeze-filled ambiance",
+        "Heavy breakfast included",
+        "Perfect for couples"
+      ]
+    },
+    {
+      id: 4,
+      name: "Lapelle Cottage",
+      image: "/4.jpg",
+      price: "$180",
+      capacity: "2 Guests",
+      size: "1 Bedroom [King Size Bed]",
+      description: "Modern simplicity blended with natural charm. Free WiFi.",
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      features: [
+        "Modern simplicity",
+        "Natural charm",
+        "Heavy breakfast included",
+        "Ideal for a peaceful retreat"
       ]
     }
   ];
