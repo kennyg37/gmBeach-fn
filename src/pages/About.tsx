@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Award, Users, Heart, Leaf } from 'lucide-react';
+import { Award, Heart, Leaf } from 'lucide-react';
 
 const About: React.FC = () => {
   const fadeInUp = {

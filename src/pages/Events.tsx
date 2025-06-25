@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -91,7 +90,7 @@ const Events = () => (
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {events.map((event, index) => (
+          {events.map((event) => (
             <motion.div
               key={event.id}
               className={`bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row items-stretch border-2 border-amber-100 hover:border-amber-300 transition-all duration-300`}
