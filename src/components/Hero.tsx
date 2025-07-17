@@ -2,23 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from './Header';
 import BookingWidget from './BookingWidget';
-import { ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  };
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/4.jpg')",
+          backgroundImage: "url('/1.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
@@ -65,30 +57,11 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Enhanced Booking Widget */}
-          <BookingWidget />
+          <div className="flex justify-center items-center mb-7">
+            <BookingWidget />
+          </div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2 }}
-        >
-          <motion.button
-            onClick={scrollToNext}
-            className="flex flex-col items-center text-white/70 hover:text-white transition-colors group"
-            whileHover={{ y: -2 }}
-          >
-            <span className="text-sm tracking-wider mb-2">Discover More</span>
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <ChevronDown className="w-6 h-6" />
-            </motion.div>
-          </motion.button>
-        </motion.div>
       </div>
     </div>
   );

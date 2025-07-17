@@ -47,10 +47,11 @@ const Navbar: React.FC<NavbarProps> = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-xl md:text-2xl font-light tracking-wider text-gray-800 uppercase">
-          Good Mood
-        </h1>
-        <span className="text-xs tracking-widest text-gray-600 uppercase">Beach Resort</span>
+        <img 
+          src="/logo.png" 
+          alt="Good Mood Beach Resort" 
+          className="h-10 md:h-18 w-auto object-contain"
+        />
       </motion.div>
 
       {/* Desktop Menu */}
