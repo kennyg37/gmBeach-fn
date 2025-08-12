@@ -45,7 +45,7 @@ const Dining: React.FC = () => {
     },
     {
       id: 3,
-      name: "Modern Kitchen",
+      name: "Open Kitchen",
       image: "/3.jpg",
       cuisine: "Open Concept Kitchen",
       hours: "6:00 AM - 10:00 PM",
@@ -57,7 +57,7 @@ const Dining: React.FC = () => {
     },
     {
       id: 4,
-      name: "BBQ Experience",
+      name: "BBQ",
       image: "/4.jpg",
       cuisine: "BBQ",
       hours: "On Request",

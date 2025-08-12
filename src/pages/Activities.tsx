@@ -31,6 +31,7 @@ const Activities: React.FC = () => {
       rating: 4.8,
       description: "Observe a wide variety of exotic and native birds in their natural lakeside habitat.",
       highlights: [
+        "over 200 species of birds",
         "Guided birdwatching walks",
         "Binoculars available"
       ],
@@ -198,40 +199,39 @@ const Activities: React.FC = () => {
       ],
       category: "Games & Sports"
     },
-    // Chill & Romance Spots
-    {
-      id: 12,
-      name: "Gazaux de Champagne",
-      image: "/8.jpg",
-      duration: "Flexible",
-      groupSize: "2 people",
-      difficulty: "Easy",
-      price: "Included",
-      rating: 4.9,
-      description: "Lakeside sipping corner.",
-      highlights: [
-        "Romantic lakeside spot"
-      ],
-      category: "Chill & Romance Spots"
-    },
-    {
-      id: 13,
-      name: "Gazaux de Golf",
-      image: "/7.jpg",
-      duration: "Flexible",
-      groupSize: "2 people",
-      difficulty: "Easy",
-      price: "Included",
-      rating: 4.8,
-      description: "A golf-inspired garden relaxation zone.",
-      highlights: [
-        "Garden relaxation"
-      ],
-      category: "Chill & Romance Spots"
-    },
+    // {
+    //   id: 12,
+    //   name: "Gazaux de Champagne",
+    //   image: "/8.jpg",
+    //   duration: "Flexible",
+    //   groupSize: "2 people",
+    //   difficulty: "Easy",
+    //   price: "Included",
+    //   rating: 4.9,
+    //   description: "Lakeside sipping corner.",
+    //   highlights: [
+    //     "Romantic lakeside spot"
+    //   ],
+    //   category: "Chill & Romance Spots"
+    // },
+    // {
+    //   id: 13,
+    //   name: "Gazaux de Golf",
+    //   image: "/7.jpg",
+    //   duration: "Flexible",
+    //   groupSize: "2 people",
+    //   difficulty: "Easy",
+    //   price: "Included",
+    //   rating: 4.8,
+    //   description: "A golf-inspired garden relaxation zone.",
+    //   highlights: [
+    //     "Garden relaxation"
+    //   ],
+    //   category: "Chill & Romance Spots"
+    // },
     {
       id: 14,
-      name: "Bingaloo d'Amour",
+      name: "Bingaloo d'Amour (Swinging Bed)",
       image: "/6.jpg",
       duration: "Flexible",
       groupSize: "2 people",
@@ -244,6 +244,38 @@ const Activities: React.FC = () => {
         "Perfect for sunset"
       ],
       category: "Chill & Romance Spots"
+    }, 
+    {
+      id: 15,
+      name: "Pool table",
+      image: "/10.jpg",
+      duration: "Flexible",
+      groupSize: "4 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.9,
+      description: "Pool table for fun and relaxation.",
+      highlights: [
+        "Pool table",
+        "Fun and relaxation"
+      ],
+      category: "Chill & Romance Spots"
+    }, 
+    {
+      id: 16,
+      name: "Hiking (Mount fumbwe)",
+      image: "/10.jpg",
+      duration: "Flexible",
+      groupSize: "4 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.9,
+      description: "Hiking in the mountains of Rwanda.",
+      highlights: [
+        "Hiking",
+        "Mountains"
+      ],
+      category: "Nature & Leisure"
     }
   ];
 

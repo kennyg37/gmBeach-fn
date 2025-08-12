@@ -16,9 +16,7 @@ const Header: React.FC<{ className?: string }> = ({ className = '' }) => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 transition-all duration-300 ${className} ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 transition-all duration-300 bg-white shadow-sm ${className}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
