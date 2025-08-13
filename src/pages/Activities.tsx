@@ -23,7 +23,7 @@ const Activities: React.FC = () => {
     {
       id: 1,
       name: "Bird Viewing",
-      image: "/2.jpg",
+      image: "/bird.jpeg",
       duration: "1 Hour",
       groupSize: "10 people max",
       difficulty: "Easy",
@@ -40,7 +40,7 @@ const Activities: React.FC = () => {
     {
       id: 2,
       name: "Zoo Botanic Walk",
-      image: "/10.jpg",
+      image: "/botanic.jpg",
       duration: "1 Hour",
       groupSize: "15 people max",
       difficulty: "Easy",
@@ -56,7 +56,7 @@ const Activities: React.FC = () => {
     {
       id: 3,
       name: "Fresh Fruit & Vegetable Garden Tour",
-      image: "/8.jpg",
+      image: "/garden.jpg",
       duration: "45 Minutes",
       groupSize: "10 people max",
       difficulty: "Easy",
@@ -69,59 +69,10 @@ const Activities: React.FC = () => {
       ],
       category: "Nature & Leisure"
     },
-    // Water Activities
-    {
-      id: 4,
-      name: "Umbrella Boat Ride",
-      image: "/3.jpg",
-      duration: "30 Minutes",
-      groupSize: "6 people max",
-      difficulty: "Easy",
-      price: "$20",
-      rating: 4.9,
-      description: "Enjoy a slow, romantic cruise on Lake Muhazi under a shaded umbrella boat.",
-      highlights: [
-        "Romantic lake cruise",
-        "Shaded umbrella boat"
-      ],
-      category: "Water Activities"
-    },
-    {
-      id: 5,
-      name: "Speed Boat Adventures",
-      image: "/1.jpg",
-      duration: "20 Minutes",
-      groupSize: "4 people max",
-      difficulty: "Moderate",
-      price: "$35",
-      rating: 4.8,
-      description: "For the thrill-seekers—feel the breeze with a fast-paced ride across the lake.",
-      highlights: [
-        "Fast-paced lake ride",
-        "Thrill-seeking adventure"
-      ],
-      category: "Water Activities"
-    },
-    {
-      id: 6,
-      name: "Fishing on the Lake",
-      image: "/5.jpg",
-      duration: "1 Hour",
-      groupSize: "6 people max",
-      difficulty: "Easy",
-      price: "$15",
-      rating: 4.5,
-      description: "Grab a rod and try catching your own fresh fish right from the lake.",
-      highlights: [
-        "Fishing equipment provided",
-        "Catch-and-release option"
-      ],
-      category: "Water Activities"
-    },
     {
       id: 7,
       name: "Swimming Pool",
-      image: "/4.jpg",
+      image: "/swiming.jpeg",
       duration: "All Day",
       groupSize: "Open",
       difficulty: "Easy",
@@ -134,15 +85,65 @@ const Activities: React.FC = () => {
       ],
       category: "Water Activities"
     },
+    // Water Activities
+    {
+      id: 4,
+      name: "Umbrella Boat Ride",
+      image: "/umbrella.jpg",
+      duration: "30 Minutes",
+      groupSize: "6 people max",
+      difficulty: "Easy",
+      price: "Extra",
+      rating: 4.9,
+      description: "Enjoy a slow, romantic cruise on Lake Muhazi under a shaded umbrella boat.",
+      highlights: [
+        "Romantic lake cruise",
+        "Shaded umbrella boat"
+      ],
+      category: "Water Activities"
+    },
+    {
+      id: 5,
+      name: "Speed Boat Adventures",
+      image: "/boat.jpg",
+      duration: "20 Minutes",
+      groupSize: "4 people max",
+      difficulty: "Moderate",
+      price: "Extra",
+      rating: 4.8,
+      description: "For the thrill-seekers—feel the breeze with a fast-paced ride across the lake.",
+      highlights: [
+        "Fast-paced lake ride",
+        "Thrill-seeking adventure"
+      ],
+      category: "Water Activities"
+    },
+    {
+      id: 6,
+      name: "Fishing on the Lake",
+      image: "/fishing.jpg",
+      duration: "1 Hour",
+      groupSize: "6 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.5,
+      description: "Grab a rod and try catching your own fresh fish right from the lake.",
+      highlights: [
+        "Fishing equipment provided",
+        "Catch-and-release option"
+      ],
+      category: "Water Activities"
+    },
+    
     // Games & Sports
     {
       id: 8,
       name: "Mini Golf",
-      image: "/7.jpg",
+      image: "/golf.jpeg",
       duration: "Flexible",
       groupSize: "6 people max",
-      difficulty: "Easy",
-      price: "$10",
+      difficulty: "Included",
+      price: "Extra",
       rating: 4.6,
       description: "Have some relaxed fun with family or friends on our mini golf course.",
       highlights: [
@@ -154,7 +155,7 @@ const Activities: React.FC = () => {
     {
       id: 9,
       name: "Basketball",
-      image: "/6.jpg",
+      image: "/basketball.jpg",
       duration: "Flexible",
       groupSize: "10 people max",
       difficulty: "Easy",
@@ -170,7 +171,7 @@ const Activities: React.FC = () => {
     {
       id: 10,
       name: "Table Tennis",
-      image: "/9.jpg",
+      image: "/tennis.jpeg",
       duration: "Flexible",
       groupSize: "4 people max",
       difficulty: "Easy",
@@ -180,22 +181,6 @@ const Activities: React.FC = () => {
       highlights: [
         "Indoor table tennis",
         "Fun matches"
-      ],
-      category: "Games & Sports"
-    },
-    {
-      id: 11,
-      name: "Mini Football",
-      image: "/10.jpg",
-      duration: "Flexible",
-      groupSize: "8 people max",
-      difficulty: "Easy",
-      price: "Included",
-      rating: 4.3,
-      description: "Play small-sided football matches in a fun and safe environment.",
-      highlights: [
-        "Small-sided matches",
-        "Safe environment"
       ],
       category: "Games & Sports"
     },
@@ -232,7 +217,7 @@ const Activities: React.FC = () => {
     {
       id: 14,
       name: "Bingaloo d'Amour (Swinging Bed)",
-      image: "/6.jpg",
+      image: "/swing.jpg",
       duration: "Flexible",
       groupSize: "2 people",
       difficulty: "Easy",
@@ -248,11 +233,11 @@ const Activities: React.FC = () => {
     {
       id: 15,
       name: "Pool table",
-      image: "/10.jpg",
+      image: "/pooltable.jpeg",
       duration: "Flexible",
       groupSize: "4 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "Extra",
       rating: 4.9,
       description: "Pool table for fun and relaxation.",
       highlights: [
@@ -264,7 +249,7 @@ const Activities: React.FC = () => {
     {
       id: 16,
       name: "Hiking (Mount fumbwe)",
-      image: "/10.jpg",
+      image: "/hiking.jpg",
       duration: "Flexible",
       groupSize: "4 people max",
       difficulty: "Easy",
@@ -276,6 +261,22 @@ const Activities: React.FC = () => {
         "Mountains"
       ],
       category: "Nature & Leisure"
+    }, 
+    {
+      id: 17,
+      name: "Volleyball",
+      image: "/volleyball.jpeg",
+      duration: "Flexible",
+      groupSize: "10 people max",
+      difficulty: "Easy",
+      price: "Included",
+      rating: 4.9,
+      description: "Volleyball for fun and relaxation.",
+      highlights: [
+        "Volleyball",
+        "Fun and relaxation"
+      ],
+      category: "Games & Sports"
     }
   ];
 
@@ -300,7 +301,7 @@ const Activities: React.FC = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/9.jpg')" }}
+          style={{ backgroundImage: "url('/sunset.jpg')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
         </div>

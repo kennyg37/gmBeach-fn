@@ -22,7 +22,7 @@ const Dining: React.FC = () => {
     {
       id: 1,
       name: "Restaurant",
-      image: "/8.jpg",
+      image: "/res.jpeg",
       cuisine: "Full-service Dining",
       hours: "6:00 AM - 10:00 PM",
       capacity: "80 guests",
@@ -34,7 +34,7 @@ const Dining: React.FC = () => {
     {
       id: 2,
       name: "Bar",
-      image: "/6.jpg",
+      image: "/bar-night.jpg",
       cuisine: "Cocktails, Local Beers, Fine Wines",
       hours: "4:00 PM - 12:00 AM",
       capacity: "40 guests",
@@ -46,7 +46,7 @@ const Dining: React.FC = () => {
     {
       id: 3,
       name: "Open Kitchen",
-      image: "/3.jpg",
+      image: "/open.jpg",
       cuisine: "Open Concept Kitchen",
       hours: "6:00 AM - 10:00 PM",
       capacity: "-",

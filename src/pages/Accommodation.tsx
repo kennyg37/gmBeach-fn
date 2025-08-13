@@ -22,13 +22,14 @@ const Accommodation: React.FC = () => {
     {
       id: 1,
       name: "Family House",
-      image: "/5.jpg",
+      image: "/family.jpg",
       price: "$250",
       capacity: "4-6 Guests",
       size: "2 Bedrooms",
       description: "Perfect for families or groups who need space and convenience.",
       amenities: ["2 Bedrooms", "Living Room", "Fully Equipped Kitchen", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
+        "Lake view",
         "Spacious living area",
         "Ideal for families or groups",
         "Heavy breakfast included"
@@ -37,7 +38,7 @@ const Accommodation: React.FC = () => {
     {
       id: 2,
       name: "Victoria Cottage",
-      image: "/6.jpg",
+      image: "/5.jpg",
       price: "$150",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
@@ -52,8 +53,8 @@ const Accommodation: React.FC = () => {
     },
     {
       id: 3,
-      name: "Nuit de Brise Cottage (Igitenge)",
-      image: "/7.jpg",
+      name: "Nuit Berceuse Cottage (Igitenge)",
+      image: "/igitenge.jpg",
       price: "$120",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
@@ -70,13 +71,14 @@ const Accommodation: React.FC = () => {
     {
       id: 4,
       name: "LaPerle douce Cottage",
-      image: "/4.jpg",
+      image: "/laperle.jpg",
       price: "$120",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "Modern simplicity blended with natural charm. Free WiFi.",
       amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
+        "Lake view",
         "Modern simplicity",
         "Natural charm",
         "Heavy breakfast included",
@@ -86,13 +88,14 @@ const Accommodation: React.FC = () => {
     {
       id: 5,
       name: "Agasaro's Secret",
-      image: "/3.jpg",
-      price: "$120",
+      image: "/6.jpg",
+      price: "$150",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "A romantic breeze-filled stay, ideal for couples.",
       amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
+        "Lake view",
         "Heavy breakfast included",
         "Perfect for couples",
         "Ideal for a peaceful retreat"
@@ -101,13 +104,14 @@ const Accommodation: React.FC = () => {
     {
       id: 6,
       name: "Au coin du chic 1&2",
-      image: "/4.jpg",
+      image: "/chic.jpeg",
       price: "$120",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "A romantic breeze-filled stay, ideal for couples.",
       amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
       features: [
+        "Lake view",
         "Romantic setting",
         "Heavy breakfast included",
         "Perfect for couples",
