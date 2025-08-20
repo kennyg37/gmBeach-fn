@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Clock, Users, MapPin, Star } from 'lucide-react';
+import {Star } from 'lucide-react';
 
 const Activities: React.FC = () => {
   const fadeInUp = {
@@ -27,7 +27,7 @@ const Activities: React.FC = () => {
       duration: "1 Hour",
       groupSize: "10 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "free",
       rating: 4.8,
       description: "Observe a wide variety of exotic and native birds in their natural lakeside habitat.",
       highlights: [
@@ -44,7 +44,7 @@ const Activities: React.FC = () => {
       duration: "1 Hour",
       groupSize: "15 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "free",
       rating: 4.7,
       description: "Stroll through our lush botanical space featuring local plant life and small animals (Monkeys) for a peaceful nature experience.",
       highlights: [
@@ -60,7 +60,7 @@ const Activities: React.FC = () => {
       duration: "45 Minutes",
       groupSize: "10 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "free",
       rating: 4.6,
       description: "Visit our garden to see how we grow fresh, organic produce that ends up on your plate.",
       highlights: [
@@ -76,7 +76,7 @@ const Activities: React.FC = () => {
       duration: "All Day",
       groupSize: "Open",
       difficulty: "Easy",
-      price: "Included",
+      price: "Extra",
       rating: 4.7,
       description: "Take a refreshing dip in our clean and scenic pool overlooking the lake.",
       highlights: [
@@ -125,7 +125,7 @@ const Activities: React.FC = () => {
       duration: "1 Hour",
       groupSize: "6 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "Extra",
       rating: 4.5,
       description: "Grab a rod and try catching your own fresh fish right from the lake.",
       highlights: [
@@ -142,7 +142,7 @@ const Activities: React.FC = () => {
       image: "/golf.jpeg",
       duration: "Flexible",
       groupSize: "6 people max",
-      difficulty: "Included",
+      difficulty: "",
       price: "Extra",
       rating: 4.6,
       description: "Have some relaxed fun with family or friends on our mini golf course.",
@@ -159,7 +159,7 @@ const Activities: React.FC = () => {
       duration: "Flexible",
       groupSize: "10 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "free",
       rating: 4.5,
       description: "Enjoy a quick game or shoot some hoops with fellow guests.",
       highlights: [
@@ -175,7 +175,7 @@ const Activities: React.FC = () => {
       duration: "Flexible",
       groupSize: "4 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "Extra",
       rating: 4.4,
       description: "Test your reflexes and have fun with indoor table tennis matches.",
       highlights: [
@@ -191,7 +191,7 @@ const Activities: React.FC = () => {
     //   duration: "Flexible",
     //   groupSize: "2 people",
     //   difficulty: "Easy",
-    //   price: "Included",
+    //   price: "",
     //   rating: 4.9,
     //   description: "Lakeside sipping corner.",
     //   highlights: [
@@ -206,7 +206,7 @@ const Activities: React.FC = () => {
     //   duration: "Flexible",
     //   groupSize: "2 people",
     //   difficulty: "Easy",
-    //   price: "Included",
+    //   price: "",
     //   rating: 4.8,
     //   description: "A golf-inspired garden relaxation zone.",
     //   highlights: [
@@ -216,12 +216,12 @@ const Activities: React.FC = () => {
     // },
     {
       id: 14,
-      name: "Bingaloo d'Amour (Swinging Bed)",
+      name: "Bingalo d'Amour (Swinging Bed)",
       image: "/swing.jpg",
       duration: "Flexible",
       groupSize: "2 people",
       difficulty: "Easy",
-      price: "Included",
+      price: "Extra",
       rating: 4.9,
       description: "Swinging Bed for two, perfect for sunset moments.",
       highlights: [
@@ -253,7 +253,7 @@ const Activities: React.FC = () => {
       duration: "Flexible",
       groupSize: "4 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "free",  
       rating: 4.9,
       description: "Hiking in the mountains of Rwanda.",
       highlights: [
@@ -269,7 +269,7 @@ const Activities: React.FC = () => {
       duration: "Flexible",
       groupSize: "10 people max",
       difficulty: "Easy",
-      price: "Included",
+      price: "free",
       rating: 4.9,
       description: "Volleyball for fun and relaxation.",
       highlights: [
@@ -277,7 +277,40 @@ const Activities: React.FC = () => {
         "Fun and relaxation"
       ],
       category: "Games & Sports"
-    }
+    },
+    {
+      id: 18,
+      name: "Camping",
+      image: "/camping.jpg",
+      duration: "Flexible",
+      groupSize: "10 people max",
+      difficulty: "Easy",
+      price: "Extra",
+      rating: 4.9,
+      description: "Camping for fun and relaxation.",
+      highlights: [
+        "Camping",
+        "Fun and relaxation"
+      ],
+      category: "Nature & Leisure"
+    },
+    {
+      id: 19,
+      name: "Cards and Board Games",
+      image: "/games.jpg",
+      duration: "Flexible",
+      groupSize: "4 people max",
+      difficulty: "Easy",
+      price: "free",
+      rating: 4.9,
+      description: "Cards and board games for fun and relaxation.",
+      highlights: [
+        "Cards",
+        "Board games",
+        "Fun and relaxation"
+      ],
+      category: "Games & Sports"
+    },
   ];
 
   const categories = [
@@ -387,58 +420,17 @@ const Activities: React.FC = () => {
                     <h3 className="text-xl font-medium text-gray-800">
                       {activity.name}
                     </h3>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      <span className="text-sm text-gray-600">{activity.rating}</span>
-                    </div>
                   </div>
 
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
                     {activity.description}
                   </p>
-
-                  <div className="grid grid-cols-3 gap-4 mb-4 text-xs text-gray-500">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {activity.duration}
+                  <div className="flex items-center justify-between">
+                    {/* rating */}
+                    <div className="flex items-center gap-2">
+                      <Star className="w-4 h-4" />
+                      <span className="text-sm text-gray-600">{activity.rating}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-3 h-3" />
-                      {activity.groupSize}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" />
-                      {activity.difficulty}
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <h4 className="text-sm font-medium text-gray-800 mb-2">Highlights:</h4>
-                    <ul className="space-y-1">
-                      {activity.highlights.slice(0, 2).map((highlight, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-600">
-                          <span className="w-1 h-1 bg-amber-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <motion.button
-                      className="flex-1 bg-amber-500 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-amber-600 transition-colors"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Book Now
-                    </motion.button>
-                    <motion.button
-                      className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Details
-                    </motion.button>
                   </div>
                 </div>
               </motion.div>

@@ -1,8 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Header from './Header';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_MESSAGE, RESORT_NAME, RESORT_LOCATION, RESORT_DESCRIPTION } from '../constants/constants';
 
 const Hero: React.FC = () => {
+  // Create WhatsApp URL with pre-filled message
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  
+  // Create email URL with subject and body
+  const emailUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Inquiry about ${RESORT_NAME}`)}&body=${encodeURIComponent(`Hello,\n\nI'm interested in learning more about ${RESORT_NAME} at ${RESORT_LOCATION}.\n\nPlease provide information about:\n- Availability and rates\n- Amenities and activities\n- Booking process\n\nThank you!`)}`;
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
@@ -51,7 +58,7 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
-              Experience the perfect harmony of luxury and nature on the pristine shores of Lake Muhazi, Rwanda
+              {RESORT_DESCRIPTION}
             </motion.p>
           </div>
 
@@ -79,10 +86,11 @@ const Hero: React.FC = () => {
             >
               {/* Email Icon */}
               <motion.a
-                href="mailto:info@goodmoodresort.com"
+                href={emailUrl}
                 className="group relative p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
+                title="Send us an email"
               >
                 <svg 
                   className="w-8 h-8 text-white group-hover:text-amber-300 transition-colors duration-300" 
@@ -98,12 +106,13 @@ const Hero: React.FC = () => {
 
               {/* WhatsApp Icon */}
               <motion.a
-                href="https://wa.me/250788123456"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
+                title="Chat with us on WhatsApp"
               >
                 <svg 
                   className="w-8 h-8 text-white group-hover:text-green-400 transition-colors duration-300" 

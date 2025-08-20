@@ -1,7 +1,8 @@
 import React, { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { MapPin, Phone, Mail, Clock} from 'lucide-react';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, RESORT_NAME, RESORT_LOCATION } from '../constants/constants';
 
 const Footer: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -45,19 +46,14 @@ const Footer: React.FC = () => {
       url: 'https://facebook.com/goodmoodresort',
     },
     {
-      name: 'Twitter',
-      icon: <FaTwitter />,
-      url: 'https://twitter.com/goodmoodresort',
-    },
-    {
       name: 'Instagram',
       icon: <FaInstagram />,
       url: 'https://instagram.com/goodmoodresort',
     },
     {
-      name: 'LinkedIn',
-      icon: <FaLinkedin />,
-      url: 'https://linkedin.com/company/goodmoodresort',
+      name: 'WhatsApp',
+      icon: <FaWhatsapp />,
+      url: `https://wa.me/${WHATSAPP_NUMBER}`,
     },
   ];
 
@@ -66,10 +62,17 @@ const Footer: React.FC = () => {
     { name: 'Accommodations', url: '/accommodation' },
     { name: 'Dining', url: '/dining' },
     { name: 'Activities', url: '/activities' },
-    { name: 'Wellness', url: '/wellness' },
     { name: 'Gallery', url: '/gallery' },
     { name: 'Contact', url: '/contact' },
     { name: 'Booking', url: '/booking' },
+  ];
+
+  const services = [
+    'Luxury Accommodations',
+    'Organic Farm-to-Table Dining',
+    'Cultural Experiences',
+    'Water Sports & Activities',
+    'Event Hosting',
   ];
 
   return (
@@ -93,7 +96,7 @@ const Footer: React.FC = () => {
               </h3>
               <span className="text-sm tracking-widest text-amber-300 uppercase mb-4">Beach Resort</span>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Experience luxury and tranquility at Rwanda's premier lakeside destination.
+                Experience luxury and tranquility at Rwanda's premier lakeside destination, where nature meets luxury.
               </p>
             </div>
             
@@ -101,8 +104,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium text-sm">Address</p>
-                  <p className="text-gray-300 text-sm">Good Mood Beach Resort<br />Lake Muhazi, Rwanda</p>
+                  <p className="text-white font-medium text-sm">Location</p>
+                  <p className="text-gray-300 text-sm">{RESORT_NAME}<br />{RESORT_LOCATION}</p>
                 </div>
               </div>
               
@@ -110,7 +113,7 @@ const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-white font-medium text-sm">Phone</p>
-                  <p className="text-gray-300 text-sm">+250 788 123 456</p>
+                  <p className="text-gray-300 text-sm">+{WHATSAPP_NUMBER}</p>
                 </div>
               </div>
               
@@ -118,14 +121,14 @@ const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-white font-medium text-sm">Email</p>
-                  <p className="text-gray-300 text-sm">info@goodmoodresort.com</p>
+                  <p className="text-gray-300 text-sm">{CONTACT_EMAIL}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-medium text-sm">Reception Hours</p>
+                  <p className="text-white font-medium text-sm">Reception</p>
                   <p className="text-gray-300 text-sm">24/7 Available</p>
                 </div>
               </div>
@@ -158,16 +161,7 @@ const Footer: React.FC = () => {
               Services
             </h3>
             <ul className="space-y-3">
-              {[
-                'Luxury Accommodations',
-                'Fine Dining',
-                'Spa & Wellness',
-                'Water Sports',
-                'Cultural Tours',
-                'Event Hosting',
-                'Airport Transfer',
-                'Concierge Service'
-              ].map((service) => (
+              {services.map((service) => (
                 <li key={service}>
                   <span className="text-gray-300 text-sm tracking-wide flex items-center gap-2">
                     <span className="w-1 h-1 bg-amber-400 rounded-full"></span>
@@ -178,18 +172,26 @@ const Footer: React.FC = () => {
             </ul>
           </motion.div>
 
-          {/* Newsletter & Social */}
+          {/* Contact Form & Social */}
           <motion.div className="space-y-6" variants={fadeInUp}>
             <h3 className="text-lg font-medium tracking-wider text-white uppercase border-b border-amber-400 pb-2">
-              Stay Connected
+              Get In Touch
             </h3>
             
             <div className="space-y-4">
               <p className="text-gray-300 text-sm">
-                Subscribe to our newsletter for exclusive offers and updates.
+                Have questions? Send us a message and we'll get back to you promptly.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-3">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Your name"
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 transition-colors"
+                />
                 <input
                   type="email"
                   name="email"
@@ -198,13 +200,21 @@ const Footer: React.FC = () => {
                   placeholder="Your email address"
                   className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 transition-colors"
                 />
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your message"
+                  rows={3}
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 transition-colors resize-none"
+                />
                 <motion.button
                   type="submit"
                   className="w-full p-3 bg-gradient-to-r from-amber-400 to-amber-500 text-gray-900 rounded-lg font-medium hover:from-amber-500 hover:to-amber-600 transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Subscribe
+                  Send Message
                 </motion.button>
               </form>
             </div>
@@ -238,7 +248,7 @@ const Footer: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Good Mood Beach Resort. All rights reserved.
+              &copy; {new Date().getFullYear()} {RESORT_NAME}. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
               <a href="/privacy" className="hover:text-amber-300 transition-colors">Privacy Policy</a>

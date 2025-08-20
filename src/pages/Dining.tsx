@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Clock, Users, Utensils, Leaf } from 'lucide-react';
+import { Clock, Utensils, Leaf } from 'lucide-react';
 
 const Dining: React.FC = () => {
   const fadeInUp = {
@@ -73,32 +73,7 @@ const Dining: React.FC = () => {
     }
   ];
 
-  const menuHighlights = [
-    {
-      category: "Breakfast",
-      items: [
-        { name: "Rwandan Coffee Experience", price: "$12", description: "Locally roasted coffee with traditional preparation" },
-        { name: "Garden Fresh Omelet", price: "$15", description: "Eggs with herbs and vegetables from our garden" },
-        { name: "Tropical Fruit Bowl", price: "$10", description: "Seasonal fruits with honey and yogurt" }
-      ]
-    },
-    {
-      category: "Lunch",
-      items: [
-        { name: "Lake Muhazi Fish", price: "$28", description: "Fresh catch grilled with local spices" },
-        { name: "Organic Vegetable Curry", price: "$22", description: "Seasonal vegetables in aromatic curry sauce" },
-        { name: "Traditional Ugali", price: "$18", description: "Served with beef stew and vegetables" }
-      ]
-    },
-    {
-      category: "Dinner",
-      items: [
-        { name: "Chef's Tasting Menu", price: "$65", description: "5-course journey through Rwandan flavors" },
-        { name: "Grilled Beef Tenderloin", price: "$35", description: "With roasted vegetables and red wine sauce" },
-        { name: "Vegetarian Feast", price: "$30", description: "Plant-based dishes celebrating local produce" }
-      ]
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -265,31 +240,12 @@ const Dining: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4" />
-                      <div>
-                        <div className="font-medium">Capacity</div>
-                        <div>{restaurant.capacity}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
                       <Utensils className="w-4 h-4" />
                       <div>
                         <div className="font-medium">Cuisine</div>
                         <div>{restaurant.cuisine}</div>
                       </div>
                     </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-lg font-medium text-gray-800 mb-3">Signature Dishes</h4>
-                    <ul className="space-y-2">
-                      {restaurant.specialties.map((specialty, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-gray-600">
-                          <span className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></span>
-                          {specialty}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
 
                   <div>
@@ -305,72 +261,12 @@ const Dining: React.FC = () => {
                       ))}
                     </div>
                   </div>
-
-                  <motion.button
-                    className="bg-amber-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Make Reservation
-                  </motion.button>
                 </motion.div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Menu Highlights */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-12">
-          <motion.div
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
-              Menu Highlights
-            </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
-              Taste the Difference
-            </h2>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {menuHighlights.map((category, index) => (
-              <motion.div
-                key={index}
-                className="bg-white p-8 rounded-lg shadow-lg"
-                variants={fadeInUp}
-              >
-                <h3 className="text-2xl font-light text-gray-800 mb-6 text-center border-b border-amber-200 pb-4">
-                  {category.category}
-                </h3>
-                <div className="space-y-6">
-                  {category.items.map((item, idx) => (
-                    <div key={idx} className="border-b border-gray-100 pb-4 last:border-b-0">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-medium text-gray-800">{item.name}</h4>
-                        <span className="text-amber-500 font-medium">{item.price}</span>
-                      </div>
-                      <p className="text-sm text-gray-600">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

@@ -2,7 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Map from '@/components/Map';
 import { Award, Heart, Leaf } from 'lucide-react';
+import { RESORT_COORDINATES } from '@/constants/constants';
 
 const About: React.FC = () => {
   const fadeInUp = {
@@ -103,7 +105,7 @@ const About: React.FC = () => {
               />
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-400 rounded-lg flex items-center justify-center">
                 <div className="text-center text-gray-800">
-                  <div className="text-2xl font-bold">5+</div>
+                  <div className="text-2xl font-bold">3+</div>
                   <div className="text-xs uppercase tracking-wider">Years</div>
                 </div>
               </div>
@@ -155,6 +157,42 @@ const About: React.FC = () => {
                 </p>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Location Map Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            className="text-center mb-16"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+              Visit Us
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+              Find Your Way to Paradise
+            </h2>
+            <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+              Located on the pristine shores of Lake Muhazi, our resort offers the perfect blend of tranquility and accessibility
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <Map 
+              latitude={RESORT_COORDINATES.latitude}
+              longitude={RESORT_COORDINATES.longitude}
+              title="Good Mood Beach Resort"
+            />
           </motion.div>
         </div>
       </section>

@@ -1,37 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight} from 'lucide-react';
+import {  
+  GALLERY_STRUCTURE,
+  getCategoryCounts,
+  filterImagesByCategory,
+} from '@/constants/gallery-manifest';
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
+  const [categoryCounts] = useState<Record<string, number>>(getCategoryCounts());
 
   const categories = [
-    { id: 'all', name: 'All' },
-    { id: 'accommodations', name: 'Accommodations' },
-    { id: 'dining', name: 'Dining' },
-    { id: 'activities', name: 'Activities' },
-    { id: 'nature', name: 'Nature' },
+    { id: 'all', name: 'All', count: categoryCounts.all },
+    { id: 'nature', name: 'Nature', count: categoryCounts.nature },
+    { id: 'accomodation', name: 'Accommodation', count: categoryCounts.accomodation },
+    { id: 'dining', name: 'Dining', count: categoryCounts.dining },
+    { id: 'activities', name: 'Activities', count: categoryCounts.activities },
   ];
 
-  const images = [
-    { id: 1, src: '/1.jpg', category: 'nature', title: 'Lake Muhazi Sunrise', description: 'Breathtaking sunrise over the pristine waters' },
-    { id: 2, src: '/2.jpg', category: 'nature', title: 'Lakeside Serenity', description: 'Peaceful moments by the water' },
-    { id: 3, src: '/3.jpg', category: 'activities', title: 'Water Sports', description: 'Exciting water activities for all ages' },
-    { id: 4, src: '/4.jpg', category: 'accommodations', title: 'Resort Overview', description: 'Aerial view of our beautiful resort' },
-    { id: 5, src: '/5.jpg', category: 'accommodations', title: 'Luxury Suite', description: 'Elegantly appointed luxury accommodations' },
-    { id: 6, src: '/6.jpg', category: 'accommodations', title: 'Private Lakehouse', description: 'Exclusive lakefront living experience' },
-    { id: 7, src: '/7.jpg', category: 'accommodations', title: 'Cozy Cottage', description: 'Intimate cottage surrounded by nature' },
-    { id: 8, src: '/8.jpg', category: 'dining', title: 'Farm Fresh Cuisine', description: 'Organic ingredients from our gardens' },
-    { id: 9, src: '/9.jpg', category: 'activities', title: 'Wildlife Experience', description: 'Discover Rwanda\'s incredible wildlife' },
-    { id: 10, src: '/10.jpg', category: 'activities', title: 'Cultural Tours', description: 'Immerse in local culture and traditions' },
-  ];
-
-  const filteredImages = activeCategory === 'all' 
-    ? images 
-    : images.filter(img => img.category === activeCategory);
+  const filteredImages = filterImagesByCategory(activeCategory);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -120,7 +111,7 @@ const Gallery: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {category.name}
+                {category.name} ({category.count})
               </motion.button>
             ))}
           </motion.div>
@@ -150,19 +141,48 @@ const Gallery: React.FC = () => {
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={image.src}
-                      alt={image.title}
+                      alt={`${image.category} - ${image.filename}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end">
-                    <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="font-medium text-lg mb-1">{image.title}</h3>
-                      <p className="text-sm text-gray-200">{image.description}</p>
-                    </div>
-                  </div>
+                  
                 </motion.div>
               ))}
             </AnimatePresence>
+          </motion.div>
+
+          {/* No Images Message */}
+          {filteredImages.length === 0 && (
+            <motion.div
+              className="text-center py-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <p className="text-gray-500 text-lg">No images found in this category.</p>
+            </motion.div>
+          )}
+
+          {/* Gallery Stats */}
+          <motion.div
+            className="mt-16 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {Object.entries(GALLERY_STRUCTURE).map(([key, category]) => (
+                <div key={key} className="text-center">
+                  <div className="text-3xl font-bold text-amber-500 mb-2">
+                    {categoryCounts[key] || 0}
+                  </div>
+                  <div className="text-sm text-gray-600 uppercase tracking-wider">
+                    {category.name}
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -186,15 +206,10 @@ const Gallery: React.FC = () => {
             >
               <img
                 src={filteredImages[selectedImage].src}
-                alt={filteredImages[selectedImage].title}
+                alt={`${filteredImages[selectedImage].category} - ${filteredImages[selectedImage].filename}`}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
               
-              {/* Image Info */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-6 rounded-b-lg">
-                <h3 className="text-xl font-medium mb-2">{filteredImages[selectedImage].title}</h3>
-                <p className="text-gray-300">{filteredImages[selectedImage].description}</p>
-              </div>
 
               {/* Navigation Buttons */}
               <button

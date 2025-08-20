@@ -20,7 +20,7 @@ const events = [
   {
     id: 1,
     name: 'Waterfront Weddings',
-    image: '/5.jpg',
+    image: '/umbrella.jpg',
     icon: <Heart className="w-6 h-6 text-amber-500" />,
     description: 'Exchange vows with stunning lake views and natural elegance.',
     features: ['Lakeside ceremony', 'Customized packages', 'Full catering support'],
@@ -28,11 +28,19 @@ const events = [
   {
     id: 2,
     name: 'Company Retreats & Workshops',
-    image: '/6.jpg',
+    image: '/workshops.jpg',
     icon: <Users className="w-6 h-6 text-amber-500" />,
     description: 'Boost creativity, teamwork, and relaxation in a unique setting.',
     features: ['Team-building activities', 'Conference facilities', 'Serene environment'],
   },
+  {
+    id: 3, 
+    name: "By the Water events",
+    image: '/hiking.jpg',
+    icon: <Users className="w-6 h-6 text-amber-500" />,
+    description: 'Experience the beauty of the lake with a unique event.',
+    features: ['Well organized events', 'Fun and relaxation', 'Discounts and special offers'],
+  }
 ];
 
 const Events = () => (
@@ -123,22 +131,7 @@ const Events = () => (
                     ))}
                   </ul>
                 </div>
-                <div className="flex gap-4">
-                  <motion.button
-                    className="bg-amber-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-amber-600 transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Inquire Now
-                  </motion.button>
-                  <motion.button
-                    className="border border-gray-300 text-gray-700 px-6 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    View Details
-                  </motion.button>
-                </div>
+
               </div>
             </motion.div>
           ))}

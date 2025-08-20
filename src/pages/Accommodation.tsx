@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Wifi, Car, Coffee, Waves, Users, Bed } from 'lucide-react';
+import { Wifi, Car, Coffee, Waves, Users, Bed, Mail, MessageCircle } from 'lucide-react';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, RESORT_NAME } from '@/constants/constants';
 
 const Accommodation: React.FC = () => {
   const fadeInUp = {
@@ -38,7 +39,7 @@ const Accommodation: React.FC = () => {
     {
       id: 2,
       name: "Victoria Cottage",
-      image: "/5.jpg",
+      image: "/6.jpg",
       price: "$150",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
@@ -88,7 +89,7 @@ const Accommodation: React.FC = () => {
     {
       id: 5,
       name: "Agasaro's Secret",
-      image: "/6.jpg",
+      image: "/5.jpg",
       price: "$150",
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
@@ -126,6 +127,21 @@ const Accommodation: React.FC = () => {
     { icon: <Coffee className="w-6 h-6" />, name: "Daily Breakfast" },
     { icon: <Waves className="w-6 h-6" />, name: "Lake Access" },
   ];
+
+  // Function to create email booking link
+  const createEmailLink = (accommodation: any) => {
+    const subject = encodeURIComponent(`Booking Request - ${accommodation.name}`);
+    const body = encodeURIComponent(`Hello,\n\nI would like to book the ${accommodation.name} at ${RESORT_NAME}.\n\nRoom Details:\n- Room: ${accommodation.name}\n- Price: ${accommodation.price}/night\n- Capacity: ${accommodation.capacity}\n- Size: ${accommodation.size}\n\nPlease provide information about:\n- Availability for my preferred dates\n- Booking process and requirements\n- Payment options\n- Any special requests or questions\n\nThank you!`);
+    
+    return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  };
+
+  // Function to create WhatsApp booking link
+  const createWhatsAppLink = (accommodation: any) => {
+    const message = encodeURIComponent(`Hello! I would like to book the ${accommodation.name} at ${RESORT_NAME}.\n\nRoom Details:\n- Room: ${accommodation.name}\n- Price: ${accommodation.price}/night\n- Capacity: ${accommodation.capacity}\n- Size: ${accommodation.size}\n\nPlease provide information about availability and booking process. Thank you!`);
+    
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -293,20 +309,27 @@ const Accommodation: React.FC = () => {
                   </div>
 
                   <div className="flex gap-4">
-                    <motion.button
-                      className="bg-amber-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors"
+                    <motion.a
+                      href={createEmailLink(accommodation)}
+                      className="bg-amber-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      Book Now
-                    </motion.button>
-                    <motion.button
-                      className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                      <Mail className="w-4 h-4" />
+                      Book via Email
+                    </motion.a>
+                    
+                    <motion.a
+                      href={createWhatsAppLink(accommodation)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-green-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      View Details
-                    </motion.button>
+                      <MessageCircle className="w-4 h-4" />
+                      Book via WhatsApp
+                    </motion.a>
                   </div>
                 </motion.div>
               </motion.div>
