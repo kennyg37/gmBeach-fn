@@ -1,6 +1,6 @@
 // Contact Information
-export const CONTACT_EMAIL = "info@goodmoodresort.com";
-export const WHATSAPP_NUMBER = "250788123456";
+export const CONTACT_EMAIL = "goodmoodbeachresort@gmail.com";
+export const WHATSAPP_NUMBER = "+250781850791";
 export const WHATSAPP_MESSAGE = "Hello! I'm interested in your resort. Can you provide more information?";
 
 // Resort Information

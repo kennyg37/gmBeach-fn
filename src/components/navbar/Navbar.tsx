@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Search, ShoppingBag } from 'lucide-react';
+import { Menu, X, Search} from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 interface NavbarProps {
@@ -76,7 +76,6 @@ const Navbar: React.FC<NavbarProps> = () => {
       {/* Desktop Icons */}
       <div className="hidden lg:flex items-center gap-4">
         <Search className="w-5 h-5 text-gray-700 hover:text-gray-900 cursor-pointer" />
-        <ShoppingBag className="w-5 h-5 text-gray-700 hover:text-gray-900 cursor-pointer" />
       </div>
 
       {/* Mobile Menu Button */}

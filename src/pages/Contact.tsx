@@ -233,7 +233,6 @@ const Contact: React.FC = () => {
                       <option value="events">Events & Weddings</option>
                       <option value="dining">Dining Reservations</option>
                       <option value="activities">Activities & Tours</option>
-                      <option value="wellness">Spa & Wellness</option>
                     </select>
                   </div>
                 </div>

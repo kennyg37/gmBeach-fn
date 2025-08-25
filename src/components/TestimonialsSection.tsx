@@ -63,13 +63,13 @@ const TestimonialsSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
             Google Reviews
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
             What Our Guests Say
           </h2>
-          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto font-montserrat">
             Real experiences from travelers who have discovered the magic of Good Mood Beach Resort
           </p>
           

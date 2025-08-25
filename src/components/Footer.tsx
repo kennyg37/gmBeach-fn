@@ -43,12 +43,12 @@ const Footer: React.FC = () => {
     {
       name: 'Facebook',
       icon: <FaFacebook />,
-      url: 'https://facebook.com/goodmoodresort',
+      url: 'https://facebook.com/goodmoodbeachresort',
     },
     {
       name: 'Instagram',
       icon: <FaInstagram />,
-      url: 'https://instagram.com/goodmoodresort',
+      url: 'https://www.instagram.com/good.mood.beach.resort',
     },
     {
       name: 'WhatsApp',

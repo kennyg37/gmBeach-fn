@@ -81,13 +81,13 @@ const About: React.FC = () => {
           >
             <motion.div className="space-y-8" variants={fadeInUp}>
               <div>
-                <p className="text-2xl font-bold mb-4">The Spirit of GoodMood</p>
+                <p className="text-2xl font-bold mb-4">The Spirit of Good Mood Beach Resort</p>
                 <div className="space-y-6 text-gray-600 leading-relaxed">
                   <p>
-                    Born from a dream of peaceful lakeside living, GoodMood Resort was created as a space where comfort meets nature. We wanted to build more than a resort – a place where families, lovers, and friends can connect deeply, celebrate life, and reset their inner peace. From the fresh breeze over Muhazi to our personalized hospitality, every detail is designed to put you in a Good Mood.
+                    Born from a dream of peaceful lakeside living, Good Mood Beach Resort was created as a space where comfort meets nature. We wanted to build more than a resort – a place where families, lovers, and friends can connect deeply, celebrate life, and reset their inner peace. From the fresh breeze over Muhazi to our personalized hospitality, every detail is designed to put you in a Good Mood.
                   </p>
                   <p>
-                    Started as a family vision, today GoodMood is a community favorite and a top getaway destination. We're passionate about local culture, sustainable living, and unforgettable guest experiences.
+                    Started as a family vision, today Good Mood Beach Resort is a community favorite and a top getaway destination. We're passionate about local culture, sustainable living, and unforgettable guest experiences.
                   </p>
                 </div>
               </div>

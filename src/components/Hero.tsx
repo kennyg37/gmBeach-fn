@@ -44,16 +44,16 @@ const Hero: React.FC = () => {
             </motion.p>
             
             <motion.h1
-              className="text-4xl md:text-7xl font-light tracking-wide leading-tight"
+              className="text-4xl md:text-7xl font-light tracking-wide leading-tight font-zarathustra"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.9 }}
             >
-              GOOD MOOD BEACH RESORT
+              Good Mood Beach Resort
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-montserrat"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.1 }}

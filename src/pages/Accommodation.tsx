@@ -28,7 +28,7 @@ const Accommodation: React.FC = () => {
       capacity: "4-6 Guests",
       size: "2 Bedrooms",
       description: "Perfect for families or groups who need space and convenience.",
-      amenities: ["2 Bedrooms", "Living Room", "Fully Equipped Kitchen", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      amenities: ["2 Bedrooms", "Living Room", "Heavy Breakfast", "Hot Shower"],
       features: [
         "Lake view",
         "Spacious living area",
@@ -44,7 +44,7 @@ const Accommodation: React.FC = () => {
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "Elegant comfort with a lake view touch.",
-      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Hot Shower"],
       features: [
         "Lake view",
         "Elegant comfort",
@@ -60,7 +60,7 @@ const Accommodation: React.FC = () => {
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "A romantic breeze-filled stay, ideal for couples.",
-      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Hot Shower"],
       features: [
         "Romantic setting",
         "Lake view",
@@ -77,7 +77,7 @@ const Accommodation: React.FC = () => {
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "Modern simplicity blended with natural charm. Free WiFi.",
-      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Hot Shower"],
       features: [
         "Lake view",
         "Modern simplicity",
@@ -94,7 +94,7 @@ const Accommodation: React.FC = () => {
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "A romantic breeze-filled stay, ideal for couples.",
-      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Hot Shower"],
       features: [
         "Lake view",
         "Heavy breakfast included",
@@ -110,7 +110,7 @@ const Accommodation: React.FC = () => {
       capacity: "2 Guests",
       size: "1 Bedroom [King Size Bed]",
       description: "A romantic breeze-filled stay, ideal for couples.",
-      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Free WiFi", "Hot Shower"],
+      amenities: ["1 Bedroom [King Size Bed]", "Heavy Breakfast", "Hot Shower"],
       features: [
         "Lake view",
         "Romantic setting",

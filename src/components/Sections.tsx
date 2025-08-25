@@ -47,11 +47,11 @@ const Sections: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-zarathustra">
               Unique Accommodations
             </p>
-            <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
-              nestled among the shores of Lake Muhazi
+            <h2 className="text-4xl md:text-5xl font-light text-white leading-tight font-zarathustra">
+              Nestled among the shores of Lake Muhazi
             </h2>
           </motion.div>
 
@@ -116,13 +116,13 @@ const Sections: React.FC = () => {
 
             {/* Text Content */}
             <motion.div className="w-full lg:w-1/2 space-y-8" variants={fadeInUp}>
-              <p className="text-sm tracking-widest text-amber-300 uppercase font-light">
+              <p className="text-sm tracking-widest text-amber-300 uppercase font-light font-montserrat">
                 Bon Appétit during vacations and trips
               </p>
-              <h2 className="text-4xl md:text-5xl font-light leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light leading-tight font-montserrat">
                 Experience organic food with exclusively hand-picked crops from our own gardens
               </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed font-montserrat">
                 At Good Mood Beach Resort, the table is at the lake, which means that 95% of what our Chef uses in his cuisine is grown, nurtured, and produced on the resort. There are vegetable and herb gardens galore, and chickens, cows, horses, pigs, and turkeys wander wonderfully organically free. Even the honey served in your tea is harvested by our bees.
               </p>
                              <motion.a
@@ -149,13 +149,13 @@ const Sections: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
               Tours & Activities
             </p>
-            <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8">
+            <h2 className="text-4xl md:text-5xl font-light leading-tight mb-8 font-zarathustra">
               Discover Rwanda
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed font-montserrat">
               You are in a country where people are never bored. Immerse yourself in local art 
               exhibitions, visit local schools or hike in the mountains.
             </p>
@@ -227,10 +227,10 @@ const Sections: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
               Why Choose Good Mood
             </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
               Experience Excellence
             </h2>
           </motion.div>
@@ -252,10 +252,10 @@ const Sections: React.FC = () => {
                 <div className="text-amber-500 mb-6 flex justify-center">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-medium text-gray-800 mb-4">
+                <h3 className="text-xl font-medium text-gray-800 mb-4 font-montserrat">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed font-montserrat">
                   {feature.description}
                 </p>
               </motion.div>
