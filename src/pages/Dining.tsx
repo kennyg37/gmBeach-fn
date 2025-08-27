@@ -94,13 +94,13 @@ const Dining: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
             Culinary Excellence
           </p>
-          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
+          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8 font-zarathustra">
           Fresh Flavors. Local Taste. Global Standards.
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-montserrat">
           Enjoy a culinary journey with freshly prepared meals inspired by local ingredients and international flair.
           </p>
         </motion.div>
@@ -118,10 +118,10 @@ const Dining: React.FC = () => {
           >
             <motion.div className="space-y-8" variants={fadeInUp}>
               <div>
-                <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+                <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
                   Our Philosophy
                 </p>
-                <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight mb-6">
+                <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight mb-6 font-zarathustra">
                   From Garden to Plate
                 </h2>
               </div>
@@ -181,10 +181,10 @@ const Dining: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
               Dining Venues
             </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
               Where Every Meal is an Experience
             </h2>
           </motion.div>

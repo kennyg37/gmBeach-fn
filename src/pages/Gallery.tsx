@@ -76,13 +76,13 @@ const Gallery: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
             Visual Journey
           </p>
-          <h1 className="text-4xl md:text-6xl font-light tracking-wide leading-tight">
-            GALLERY
+          <h1 className="text-4xl md:text-6xl font-light tracking-wide leading-tight font-zarathustra">
+            Gallery
           </h1>
-          <p className="text-lg text-gray-200 mt-4">
+          <p className="text-lg text-gray-200 mt-4 font-montserrat">
             Discover the beauty and elegance of Good Mood Beach Resort
           </p>
         </motion.div>

@@ -57,13 +57,13 @@ const About: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
             Our Story
           </p>
-          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
-            GOOD MOOD BEACH RESORT
+          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8 font-zarathustra">
+            Good Mood Beach Resort
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-montserrat">
             Where luxury meets nature, and every moment becomes a cherished memory
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ const About: React.FC = () => {
           >
             <motion.div className="space-y-8" variants={fadeInUp}>
               <div>
-                <p className="text-2xl font-bold mb-4">The Spirit of Good Mood Beach Resort</p>
+                <p className="text-2xl font-bold mb-4 font-montserrat">The Spirit of Good Mood Beach Resort</p>
                 <div className="space-y-6 text-gray-600 leading-relaxed">
                   <p>
                     Born from a dream of peaceful lakeside living, Good Mood Beach Resort was created as a space where comfort meets nature. We wanted to build more than a resort – a place where families, lovers, and friends can connect deeply, celebrate life, and reset their inner peace. From the fresh breeze over Muhazi to our personalized hospitality, every detail is designed to put you in a Good Mood.
@@ -124,10 +124,10 @@ const About: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
               Our Principles
             </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
               What Drives Us Forward
             </h2>
           </motion.div>
@@ -149,10 +149,10 @@ const About: React.FC = () => {
                 <div className="text-amber-500 mb-6 flex justify-center">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-medium text-gray-800 mb-4">
+                <h3 className="text-xl font-medium text-gray-800 mb-4 font-montserrat">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed font-montserrat">
                   {value.description}
                 </p>
               </motion.div>
@@ -171,10 +171,10 @@ const About: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
               Visit Us
             </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
               Find Your Way to Paradise
             </h2>
             <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">

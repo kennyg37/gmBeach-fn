@@ -162,13 +162,13 @@ const Accommodation: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
             Luxury Accommodations
           </p>
-          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
-            WHERE COMFORT MEETS ELEGANCE
+          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8 font-zarathustra">
+            Where Comfort Meets Elegance
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-montserrat">
             Choose from our carefully curated selection of lakeside accommodations
           </p>
         </motion.div>
@@ -184,7 +184,7 @@ const Accommodation: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-light text-gray-800 mb-4">
+            <h2 className="text-3xl font-light text-gray-800 mb-4 font-zarathustra">
               Included with Every Stay
             </h2>
           </motion.div>
@@ -205,7 +205,7 @@ const Accommodation: React.FC = () => {
                 <div className="text-amber-500 mb-4 flex justify-center">
                   {amenity.icon}
                 </div>
-                <p className="text-gray-700 font-medium">{amenity.name}</p>
+                <p className="text-gray-700 font-medium font-montserrat">{amenity.name}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -222,10 +222,10 @@ const Accommodation: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+            <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
               Our Accommodations
             </p>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
               Find Your Perfect Stay
             </h2>
           </motion.div>

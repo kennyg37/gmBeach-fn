@@ -61,13 +61,13 @@ const Events = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+        <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
           Unforgettable Events
         </p>
-        <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
-          CELEBRATE BY THE WATER
+        <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8 font-zarathustra">
+          Celebrate by the Water
         </h1>
-        <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-montserrat">
           Plan your dream wedding or serene company retreat at GoodMood Resort, where every moment is crafted to perfection.
         </p>
       </motion.div>
@@ -83,10 +83,10 @@ const Events = () => (
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-500 uppercase font-light mb-4 font-montserrat">
             Our Events
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight font-zarathustra">
             Create Lasting Memories
           </h2>
         </motion.div>
@@ -117,15 +117,15 @@ const Events = () => (
               </div>
               <div className="flex-1 flex flex-col justify-center p-8 space-y-6">
                 <div>
-                  <h3 className="text-3xl font-light text-gray-800 mb-4">{event.name}</h3>
-                  <p className="text-gray-600 leading-relaxed">{event.description}</p>
+                  <h3 className="text-3xl font-light text-gray-800 mb-4 font-montserrat">{event.name}</h3>
+                  <p className="text-gray-600 leading-relaxed font-montserrat">{event.description}</p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-800 mb-3">Highlights</h4>
+                  <h4 className="text-lg font-medium text-gray-800 mb-3 font-montserrat">Highlights</h4>
                   <ul className="space-y-2">
                     {event.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-gray-600">
-                        <span className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0 font-montserrat"></span>
                         {feature}
                       </li>
                     ))}
@@ -144,7 +144,7 @@ const Events = () => (
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-montserrat">
             We offer full planning support, catering, and customized packages to ensure your event is seamless and unforgettable.
           </p>
         </motion.div>

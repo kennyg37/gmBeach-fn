@@ -345,13 +345,13 @@ const Activities: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4">
+          <p className="text-sm tracking-widest text-amber-300 uppercase font-light mb-4 font-montserrat">
             Experiences
           </p>
-          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8">
+          <h1 className="text-5xl md:text-7xl font-light tracking-wide leading-tight mb-8 font-zarathustra">
             More Than a Stay – It's a Lifestyle
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-montserrat">
             Discover the best of nature, fun, and relaxation in one resort.
           </p>
         </motion.div>
