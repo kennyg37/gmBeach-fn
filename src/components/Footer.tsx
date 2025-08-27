@@ -1,6 +1,6 @@
 import React, { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { MapPin, Phone, Mail, Clock} from 'lucide-react';
 import { CONTACT_EMAIL, WHATSAPP_NUMBER, RESORT_NAME, RESORT_LOCATION } from '../constants/constants';
 
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
     {
       name: 'Facebook',
       icon: <FaFacebook />,
-      url: 'https://facebook.com/goodmoodbeachresort',
+      url: 'https://facebook.com/good.mood.beach.resort',
     },
     {
       name: 'Instagram',
@@ -54,6 +54,11 @@ const Footer: React.FC = () => {
       name: 'WhatsApp',
       icon: <FaWhatsapp />,
       url: `https://wa.me/${WHATSAPP_NUMBER}`,
+    },
+    {
+      name: 'TikTok',
+      icon: <FaTiktok />,
+      url: 'https://www.tiktok.com/@goodmoodbeachresort',
     },
   ];
 
