@@ -13,14 +13,16 @@ const Hero: React.FC = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/1.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+      <img
+        src="/1.jpg"
+        alt="Good Mood Beach Resort hero background"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Header */}
       <Header className="bg-white" />
