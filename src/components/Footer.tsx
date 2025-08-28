@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
                 <Phone className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-white font-medium text-sm">Phone</p>
-                  <p className="text-gray-300 text-sm">+{WHATSAPP_NUMBER}</p>
+                  <p className="text-gray-300 text-sm">{WHATSAPP_NUMBER}</p>
                 </div>
               </div>
               

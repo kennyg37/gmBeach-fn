@@ -68,7 +68,7 @@ const Events = () => (
           Celebrate by the Water
         </h1>
         <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-montserrat">
-          Plan your dream wedding or serene company retreat at GoodMood Resort, where every moment is crafted to perfection.
+          Plan your dream wedding or serene company retreat at Good Mood Beach Resort, where every moment is crafted to perfection.
         </p>
       </motion.div>
     </section>
