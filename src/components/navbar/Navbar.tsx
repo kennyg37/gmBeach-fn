@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Search} from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -9,7 +9,11 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
     { name: 'Home', href: '/' },
@@ -21,8 +25,55 @@ const Navbar: React.FC<NavbarProps> = () => {
     { name: 'Events', href: '/events' },
   ];
 
+  // Extended search index with keywords covering various parts of the application
+  const searchIndex: { name: string; href: string; keywords: string[] }[] = [
+    { name: 'Home', href: '/', keywords: ['home', 'landing', 'resort', 'beach', 'good mood'] },
+    { name: 'Accommodation', href: '/accommodation', keywords: ['rooms', 'stay', 'sleep', 'bed', 'accomodation', 'accommodation'] },
+    { name: 'Experiences', href: '/activities', keywords: ['activities', 'experience', 'things to do', 'pool', 'swim', 'swimming', 'tennis', 'basketball', 'volleyball', 'hiking', 'walk', 'fishing', 'boat', 'garden', 'birds', 'games'] },
+    { name: 'Dining', href: '/dining', keywords: ['food', 'restaurant', 'dining', 'cuisine', 'bar', 'drinks', 'cocktails'] },
+    { name: 'Wellness', href: '/wellness', keywords: ['spa', 'wellness', 'relax', 'massage', 'health'] },
+    { name: 'Our Story', href: '/about', keywords: ['about', 'story', 'history'] },
+    { name: 'Gallery', href: '/gallery', keywords: ['photos', 'images', 'pictures', 'gallery'] },
+    { name: 'Events', href: '/events', keywords: ['events', 'wedding', 'workshops', 'party', 'conference', 'celebration'] },
+    { name: 'Contact', href: '/contact', keywords: ['contact', 'reach us', 'call', 'email', 'map', 'location'] },
+    { name: 'Booking', href: '/booking', keywords: ['book', 'reservation', 'availability', 'dates'] },
+  ];
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const openSearch = () => {
+    setIsSearchOpen(true);
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+    setSearchQuery('');
+  };
+
+  useEffect(() => {
+    if (isSearchOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isSearchOpen]);
+
+  const filteredItems = searchIndex.filter((item) => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return true;
+    return (
+      item.name.toLowerCase().includes(q) ||
+      item.keywords.some((k) => k.toLowerCase().includes(q))
+    );
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const target = filteredItems[0] ?? searchIndex[0];
+    if (target) {
+      navigate(target.href);
+      closeSearch();
+    }
   };
 
   // Helper to check if a menu item is active
@@ -75,7 +126,9 @@ const Navbar: React.FC<NavbarProps> = () => {
 
       {/* Desktop Icons */}
       <div className="hidden lg:flex items-center gap-4">
-        <Search className="w-5 h-5 text-gray-700 hover:text-gray-900 cursor-pointer" />
+        <button aria-label="Open search" onClick={openSearch}>
+          <Search className="w-5 h-5 text-gray-700 hover:text-gray-900 cursor-pointer" />
+        </button>
       </div>
 
       {/* Mobile Menu Button */}
@@ -130,6 +183,67 @@ const Navbar: React.FC<NavbarProps> = () => {
           </motion.a>
         ))}
       </motion.div>
+
+      {/* Search Overlay */}
+      {isSearchOpen && (
+        <motion.div
+          className="fixed inset-0 z-[60] flex items-start justify-center pt-24"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <div className="absolute inset-0 bg-black/40" onClick={closeSearch} />
+          <motion.div
+            className="relative w-full max-w-xl mx-4 bg-white rounded-lg shadow-lg border border-gray-200"
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <form onSubmit={handleSubmit} className="p-4 border-b border-gray-200 flex items-center gap-3">
+              <Search className="w-5 h-5 text-gray-500" />
+              <input
+                ref={inputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search pages..."
+                className="w-full outline-none text-gray-800 placeholder:text-gray-400"
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape') {
+                    closeSearch();
+                  }
+                }}
+              />
+              <button type="button" aria-label="Close search" onClick={closeSearch}>
+                <X className="w-5 h-5 text-gray-600" />
+              </button>
+            </form>
+            <div className="max-h-80 overflow-y-auto">
+              {filteredItems.length === 0 ? (
+                <div className="p-4 text-sm text-gray-500">No matches</div>
+              ) : (
+                <ul className="py-2">
+                  {filteredItems.map((item) => (
+                    <li key={item.name}>
+                      <button
+                        className={`w-full text-left px-4 py-2 hover:bg-gray-50 flex items-center justify-between ${
+                          isActive(item.href) ? 'bg-gray-50' : ''
+                        }`}
+                        onClick={() => {
+                          navigate(item.href);
+                          closeSearch();
+                        }}
+                      >
+                        <span className="text-gray-800">{item.name}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </motion.div>
   );
 };
