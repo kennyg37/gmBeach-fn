@@ -69,7 +69,6 @@ const Footer: React.FC = () => {
     { name: 'Activities', url: '/activities' },
     { name: 'Gallery', url: '/gallery' },
     { name: 'Contact', url: '/contact' },
-    { name: 'Booking', url: '/booking' },
   ];
 
   const services = [

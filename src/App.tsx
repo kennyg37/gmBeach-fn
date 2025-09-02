@@ -6,7 +6,6 @@ import Dining from './pages/Dining';
 import Wellness from './pages/Wellness';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import Booking from './pages/Booking';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Events from './pages/Events';
 
@@ -23,7 +22,6 @@ function App() {
         <Route path="/wellness" element={<Wellness />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/booking" element={<Booking />} />
         <Route path="/events" element={<Events />} />
       </Routes>
     </Router>

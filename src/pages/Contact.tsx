@@ -61,14 +61,14 @@ const Contact: React.FC = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+250 788 123 456", "+250 788 654 321"],
-      link: "tel:+250788123456"
+      details: ["+250781850791"],
+      link: "tel:+250781850791"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@goodmoodresort.com", "reservations@goodmoodresort.com"],
-      link: "mailto:info@goodmoodresort.com"
+      details: ["goodmoodbeachresort@gmail.com"],
+      link: "mailto:goodmoodbeachresort@gmail.com"
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -325,8 +325,8 @@ const Contact: React.FC = () => {
                     <Phone className="w-5 h-5 text-amber-500" />
                     <div>
                       <p className="font-medium text-gray-800">Call Us Now</p>
-                      <a href="tel:+250788123456" className="text-amber-600 hover:text-amber-700">
-                        +250 788 123 456
+                      <a href="tel:+250781850791" className="text-amber-600 hover:text-amber-700">
+                        +250 781 850 791
                       </a>
                     </div>
                   </div>
@@ -334,8 +334,8 @@ const Contact: React.FC = () => {
                     <Mail className="w-5 h-5 text-amber-500" />
                     <div>
                       <p className="font-medium text-gray-800">Email Us</p>
-                      <a href="mailto:info@goodmoodresort.com" className="text-amber-600 hover:text-amber-700">
-                        info@goodmoodresort.com
+                      <a href="mailto:goodmoodbeachresort@gmail.com" className="text-amber-600 hover:text-amber-700">
+                      goodmoodbeachresort@gmail.com
                       </a>
                     </div>
                   </div>
